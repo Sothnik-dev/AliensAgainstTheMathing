@@ -7,17 +7,32 @@ import { randomMath } from "./functions/randomMath.js";
 
 const mainPanel = document.getElementById('mainPanel');
 const gameContainer = document.getElementById('gameContainer');
+const startBtnContainer = document.getElementById('startBtnContainer');
 
 const startBtn = document.getElementById('startBtn');
+const confirmBtn = document.getElementById('confirmBtn');
 
 let gameStarted = false;
-let playerRound = true;
-
-const player1Health = document.getElementById('player1Health');
 
 const kukriWeapon = new Weapon('Kukri', 3, 2, 10);
 let player1 = new Person('Henry', 100, kukriWeapon.weaponName, kukriWeapon.damage);
+let player2 = new Person('Micah', 100, kukriWeapon.weaponName, kukriWeapon.damage);
 
-randomMath();
 
-player1.damageOutput(kukriWeapon.damage, kukriWeapon.kritzProb);
+
+gameContainer.style.visibility = (gameStarted) ? 'visible' : 'hidden';
+
+startBtn.addEventListener('click', () => {
+    gameStarted = true;
+    gameContainer.style.visibility = 'visible'
+    startBtnContainer.style.visibility = 'hidden'
+
+    while (gameStarted) {
+        randomMath();
+
+        if (player1.health >= 0 || player2.health >= 0) {
+            gameStarted = !gameStarted;
+        }
+    }
+})
+

@@ -1,19 +1,79 @@
+import { Person } from "../components/player.js";
+import { Weapon } from "../components/weapon.js";
+import { NewNumber } from "./newNumber.js";
+
 const val1 = document.getElementById('val1');
 const val2 = document.getElementById('val2');
 const answare = document.getElementById('answare');
 
+const player1Health = document.getElementById('player1Health');
+const player2Health = document.getElementById("player2Health");
+
 const confirmBtn = document.getElementById('confirmBtn');
+
+const timer = document.getElementById('nowTime');
+let theNow = 10;
+
+let playerRound = true;
+
+const kukriWeapon = new Weapon('Kukri', 3, 2, 10);
+let player1 = new Person('Henry', 100, kukriWeapon.weaponName, kukriWeapon.damage);
+let player2 = new Person('Micah', 100, kukriWeapon.weaponName, kukriWeapon.damage);
+
+let fValue = Math.floor(Math.random() * 10) + 1;
+let sValue = Math.floor(Math.random() * 10) + 1;
+let result = fValue * sValue;
 
 
 export function randomMath(){
-    let firstValue = Math.floor(Math.random() * 10) + 1;
-    let secondValue = Math.floor(Math.random() * 10) + 1;
-    let result = firstValue * secondValue;
+    let gameNum = new NewNumber(fValue, sValue, result);
+    console.log(gameNum);
+    val1.innerHTML = `${gameNum.x}`;
+    val2.innerHTML = `${gameNum.y}`;
 
-    val1.innerHTML = `${firstValue}`;
-    val2.innerHTML = `${secondValue}`;
+    setInterval(() => {
+        timer.innerHTML = theNow;
+        theNow--
+
+        if(theNow == -1){
+            theNow = 10;
+            playerRound = !playerRound;
+            gameNum.beRandom();
+
+            val1.innerHTML = `${gameNum.x}`;
+            val2.innerHTML = `${gameNum.y}`;
+        }
+    }, 1000)
 
     confirmBtn.addEventListener('click', () => {
-        let log = (answare.value == result) ? console.log('correto') : console.log('errado');
+        if (answare.value == gameNum.result) {
+            if (playerRound){
+                player2.damageOutput(kukriWeapon.damage, kukriWeapon.kritzProb);
+                player2Health.value = player2.health;
+                console.log(`${player2.name} está com ${player2.health}`);
+            } else {
+                player1.damageOutput(kukriWeapon.damage, kukriWeapon.kritzProb);
+                player1Health.value = player1.health;
+                console.log(`${player1.name} está com ${player1.health}`);
+            }
+            console.log('Acertou');
+            playerRound = !playerRound;
+
+            gameNum.beRandom();
+
+            val1.innerHTML = `${gameNum.x}`;
+            val2.innerHTML = `${gameNum.y}`;
+            theNow = 10;
+        } else {
+            theNow = 10;
+            playerRound = !playerRound;
+            console.log("Errou!");
+
+            gameNum.beRandom();
+
+            val1.innerHTML = `${gameNum.x}`;
+            val2.innerHTML = `${gameNum.y}`;
+        }
+        answare.value = null;
     })
 }
