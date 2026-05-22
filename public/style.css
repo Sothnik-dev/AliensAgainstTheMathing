@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'korn';
+    src: url(./fonts/KORN.ttf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    font-family: korn; 
+    font-size: 3rem;
+}
+
+progress{
+    background-color: rgb(13, 253, 13);
+}
+
+.player {
+    background-color: red;
+    width: 200px;
+    height: 350px;
+}

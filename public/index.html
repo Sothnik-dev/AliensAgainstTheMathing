@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathKnights</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<header>
+    <nav style="padding: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <p style="font-family: korn;">MathKnights Aftermatch</p>
+            <p>Sothnik was here</p>
+        </div>
+    </nav>
+</header>
+<body>
+    <div id="gameContainer">
+        <div style="display: flex; justify-content: space-around; align-items: center; padding: 20px;">
+            <div>
+                <p>Vida</p>
+                <progress id="player1Health" max="100" value="100"></progress>
+                <p>playerName</p>
+            </div>
+            <div>
+                <div>
+                    <p style="padding: 2rem;">10</p>
+                </div>
+            </div>
+            <div>
+                <p style="display: flex; justify-content: end;">Vida</p>
+                <progress max="100" value="100"></progress>
+                <p style="display: flex; justify-content: end;">playerName</p>
+            </div>
+        </div>
+    <main style="display: flex; justify-content: space-around; align-items: center; padding: 4rem;">
+        <div>
+            <div class="player">
+            </div>
+        </div>
+            <div id="gameContainer">
+                <div style="height: 200px; width: 250px; background-color: rgb(233, 228, 228); border-radius: 12px; border: solid 1px black;">
+                    <div style="display: flex; justify-content: space-around; align-items: center; height: 150px;">
+                        <p id="val1">x</p>
+                        <p>X</p>
+                        <p id="val2">x</p>
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <input style="width: 25px; height: 25px; background-color: black; color: white; border: solid 1px white; padding: 4px;" type="text" name="" id="answare">
+                        <button></button>
+                        <input style="background-color: black; color: white; border: solid 1px white; padding: 4px;" type="submit" value="Confirmar" id="confirmBtn">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="player">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script type="module" src="/src/script.js"></script>
+</html>
