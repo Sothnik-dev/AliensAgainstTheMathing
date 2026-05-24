@@ -16,6 +16,9 @@ const valueBtn1 = document.getElementsByClassName('changeBtn')[0];
 const valueBtn2 = document.getElementsByClassName('changeBtn')[1];
 const valueBtn3 = document.getElementsByClassName('changeBtn')[2];
 const valueBtn4 = document.getElementsByClassName('changeBtn')[3];
+const startBtn = document.getElementById('startBtn').addEventListener('click', () => {
+    window.location.href = `../index.html`;
+});
 
 player1Skin.innerHTML = 'olá';
 player2Skin.innerHTML = 'olá';
