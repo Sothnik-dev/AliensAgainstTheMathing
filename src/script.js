@@ -14,12 +14,6 @@ const confirmBtn = document.getElementById('confirmBtn');
 
 let gameStarted = false;
 
-const kukriWeapon = new Weapon('Kukri', 3, 2, 10);
-let player1 = new Person('Henry', 100, kukriWeapon.weaponName, kukriWeapon.damage);
-let player2 = new Person('Micah', 100, kukriWeapon.weaponName, kukriWeapon.damage);
-
-
-
 gameContainer.style.visibility = (gameStarted) ? 'visible' : 'hidden';
 
 startBtn.addEventListener('click', () => {
