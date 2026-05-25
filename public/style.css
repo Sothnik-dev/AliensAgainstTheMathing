@@ -8,9 +8,16 @@
     margin: 0;
 }
 
+body {
+    background-image: url(/public/imgs/bgToAliens.png);
+    background-size: cover;
+}
+
 p {
     font-family: korn; 
     font-size: 3rem;
+
+    color: white;   
 }
 
 progress{
@@ -20,4 +27,26 @@ progress{
 .player {
     width: 200px;
     height: 350px;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+.flexEndP{
+    display: flex;
+    justify-content: end;
+}
+
+.spaceAroundContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.spaceBetweenContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

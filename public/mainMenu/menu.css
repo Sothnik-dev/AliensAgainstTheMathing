@@ -2,3 +2,23 @@
     margin: 0px;
     padding: 0px;
 }
+
+p {
+    color: white;
+}
+
+body {
+    background-image: url(/public/imgs/bgToAliens.png);
+    background-size: cover;
+}
+
+.spaceBetweenContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,3 +1,17 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+p {
+    color: white;
+}
+
+body {
+    background-image: url(/public/imgs/bgToAliens.png);
+    background-size: cover;
+}
+
 .player {
     width: 200px;
     height: 350px;
@@ -7,4 +21,17 @@
     border: none;
     background-color: transparent;
     font-size: 2rem;
+
+    color: white;
+}
+
+.spaceAroundContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
 }

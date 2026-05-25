@@ -8,7 +8,7 @@
 </head>
 <header>
     <nav style="padding: 1rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="spaceBetweenContainer">
             <p style="font-family: korn;">MathKnights Aftermatch</p>
             <div id="startBtnContainer">
                 <div>
@@ -21,7 +21,7 @@
 </header>
 <body>
     <div id="gameContainer">
-        <div style="display: flex; justify-content: space-around; align-items: center; padding: 20px;">
+        <div class="spaceAroundContainer" style="padding: 20px;">
             <div>
                 <p>Vida</p>
                 <progress id="player1Health" max="100" value="100"></progress>
@@ -33,23 +33,23 @@
                 </div>
             </div>
             <div>
-                <p style="display: flex; justify-content: end;">Vida</p>
+                <p class="flexEndP">Vida</p>
                 <progress id="player2Health" max="100" value="100"></progress>
-                <p style="display: flex; justify-content: end;">playerName</p>
+                <p class="flexEndP">playerName</p>
             </div>
         </div>
-    <main style="display: flex; justify-content: space-around; align-items: center; padding: 4rem;">
+    <main class="spaceAroundContainer" style="padding: 4rem;">
         <div>
             <img class="player" src="" alt="">
         </div>
             <div>
-                <div style="height: 200px; width: 250px; background-color: rgb(233, 228, 228); border-radius: 12px; border: solid 1px black;">
-                    <div style="display: flex; justify-content: space-around; align-items: center; height: 150px;">
+                <div style="height: 200px; width: 250px; background-color: rgba(17, 17, 17, 0.719); border-radius: 12px; border: solid 1px black;">
+                    <div class="spaceAroundContainer" style="height: 150px;">
                         <p id="val1">x</p>
                         <p>X</p>
                         <p id="val2">x</p>
                     </div>
-                    <div style="display: flex; justify-content: center;">
+                    <div class="flexCenter">
                         <input style="width: 25px; height: 25px; background-color: black; color: white; border: solid 1px white; padding: 4px;" type="text" name="" id="answare">
                         <input style="background-color: black; color: white; border: solid 1px white; padding: 4px;" type="submit" value="Confirmar" id="confirmBtn">
                     </div>
