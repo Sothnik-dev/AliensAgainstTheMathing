@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <header>
-    <nav style="padding: 1rem;">
-        <div class="spaceBetweenContainer">
+    <nav>
+        <div class="spaceBetweenContainer" style="background-color: rgba(0, 0, 0, 0.500); padding: 1rem;">
             <p style="font-family: korn;">MathKnights Aftermatch</p>
             <div id="startBtnContainer">
                 <div>
@@ -25,7 +25,7 @@
             <div>
                 <p>Vida</p>
                 <progress id="player1Health" max="100" value="100"></progress>
-                <p>playerName</p>
+                <p id="player1NameDOM">playerName</p>
             </div>
             <div>
                 <div>
@@ -35,7 +35,7 @@
             <div>
                 <p class="flexEndP">Vida</p>
                 <progress id="player2Health" max="100" value="100"></progress>
-                <p class="flexEndP">playerName</p>
+                <p id="player2NameDOM" class="flexEndP">playerName</p>
             </div>
         </div>
     <main class="spaceAroundContainer" style="padding: 4rem;">

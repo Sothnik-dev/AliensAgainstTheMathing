@@ -4,7 +4,7 @@
 }
 
 p {
-    color: white;
+    color: green;
 }
 
 body {
@@ -21,4 +21,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#startBtn {
+    color: green;
+
+    border-radius: 12px;
+    background-color: black;
+}
+
+#startBtn :hover {
+    border: solid green 1px;
 }
