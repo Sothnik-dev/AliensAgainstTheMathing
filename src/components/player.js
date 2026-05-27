@@ -18,7 +18,5 @@ export class Person {
         let rng = Math.floor(Math.random() * 20) + 1;
 
         this.health = (rng > kritzProb) ? this.health -= damage * 2 : this.health -= damage;
-
-        console.log(`O player está com ${this.health} de vida e tomou ${damage} de dano`);
     }
 }
