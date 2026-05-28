@@ -6,6 +6,7 @@ import { randomMath } from "./randomMath.js";
 
 import { generateTime } from "./setTime.js";
 import { damageOutputAnalisy } from "./generateDamage.js";
+import { selfInflictDamage } from "./generateDamage.js";
 
 //captura de valores da equação via DOM
 const val1 = document.getElementById('val1');
@@ -32,6 +33,7 @@ export function checkAnsware() {
             randomMath(gameNum.x, gameNum.y);
         } else {
             console.log("Errou!");
+            selfInflictDamage();
             gameNum.beRandom();
             randomMath(gameNum.x, gameNum.y);
         }

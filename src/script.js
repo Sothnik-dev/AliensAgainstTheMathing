@@ -7,8 +7,6 @@ import { randomMath } from "./functions/randomMath.js";
 import { startGame } from "./functions/gameLogic.js";
 import { checkAnsware } from "./functions/checkAnsware.js";
 
-let playerRound = true;
-
 // Conteiners capturado por DOM
 const mainPanel = document.getElementById('mainPanel');
 const gameContainer = document.getElementById('gameContainer');
@@ -26,9 +24,6 @@ gameContainer.style.visibility = (gameStarted) ? 'visible' : 'hidden';
 let player1Health = sessionStorage.getItem('player1HealthValue');
 let player2Health = sessionStorage.getItem('player2HealthValue');
 
-sessionStorage.setItem('playerRoundValue', playerRound);
-
-
 // "Inicia o jogo"
 startBtn.addEventListener('click', () => {
     gameStarted = true;
@@ -44,4 +39,3 @@ startBtn.addEventListener('click', () => {
         }
     }
 })
- 
