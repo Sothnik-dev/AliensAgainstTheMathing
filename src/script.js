@@ -1,9 +1,3 @@
-//imports de componentes
-import { Person } from "./components/player.js";
-import { Weapon } from "./components/weapon.js";
-
-//imports de funções
-import { randomMath } from "./functions/randomMath.js";
 import { startGame } from "./functions/gameLogic.js";
 import { checkAnsware } from "./functions/checkAnsware.js";
 
@@ -24,11 +18,15 @@ gameContainer.style.visibility = (gameStarted) ? 'visible' : 'hidden';
 let player1Health = sessionStorage.getItem('player1HealthValue');
 let player2Health = sessionStorage.getItem('player2HealthValue');
 
+const player1Skin = document.getElementsByClassName('player')[0];
+
 // "Inicia o jogo"
 startBtn.addEventListener('click', () => {
     gameStarted = true;
     gameContainer.style.visibility = 'visible'
     startBtnContainer.style.visibility = 'hidden'
+
+    player1Skin.style.filter = `drop-shadow(0px 0px 15px green)`
 
     checkAnsware();
 

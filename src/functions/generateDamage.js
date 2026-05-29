@@ -1,7 +1,10 @@
 import { Person } from "../components/player.js";
 import { Weapon } from "../components/weapon.js";
 
-let actualPlayerRound = sessionStorage.getItem('playerRoundValue');
+import { NewNumber } from "./newNumber.js";
+import { randomMath } from "./randomMath.js";
+
+export let playerRound = true;
 
 //Recebimento de variáveis externas
 const player1NameValue = sessionStorage.getItem('player1name');
@@ -16,37 +19,75 @@ let player2 = new Person(player2NameValue, 100, gunWeapon.weaponName, gunWeapon.
 const player1Health = document.getElementById('player1Health');
 const player2Health = document.getElementById("player2Health");
 
-export function damageOutputAnalisy(){
-    if (actualPlayerRound){
-        for (let i = 0; i < gunWeapon.attackAmount; i++){
-            player2.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
-        }
-        player2Health.value = player2.health;
-        actualPlayerRound = !actualPlayerRound;
-        console.log(actualPlayerRound);
+//Captura de valores através de DOM
+const player1Skin = document.getElementsByClassName('player')[0];
+const player2Skin = document.getElementsByClassName('player')[1];
 
+const confirmBtn = document.getElementById('confirmBtn');
+const startBtn = document.getElementById('startBtn');
+
+const answare = document.getElementById('answare');
+ 
+let fValue = Math.floor(Math.random() * 10) + 1;
+let sValue = Math.floor(Math.random() * 10) + 1;
+let result = fValue * sValue;
+
+let gameNum = new NewNumber(fValue, sValue, result);
+
+randomMath(fValue, sValue);
+
+export function newRoundStyle() {
+    if (playerRound) {
+        player1Skin.style.filter = `drop-shadow(0px 0px 15px green)`
+        player2Skin.style.filter = `drop-shadow(0px 0px 0px green)`
     } else {
-        for (let i = 0; i < gunWeapon.attackAmount; i++){
-            player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
-        }
-        player1Health.value = player1.health;
-        actualPlayerRound = !actualPlayerRound;
-        console.log(actualPlayerRound);
-
-    }    
+        player2Skin.style.filter = `drop-shadow(0px 0px 15px green)`
+        player1Skin.style.filter = `drop-shadow(0px 0px 0px green)`
+    }
 }
 
 export function selfInflictDamage() {
-    if (actualPlayerRound) {
+    if (playerRound) {
         player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
         player1Health.value = player1.health;
-        actualPlayerRound = !actualPlayerRound;
-        console.log(actualPlayerRound);
-
     } else {
         player2.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
         player2Health.value = player2.health;
-        actualPlayerRound = !actualPlayerRound; 
-        console.log(actualPlayerRound);
+    }
+}
+
+export function damageOutputAnalisy(){
+    confirmBtn.addEventListener('click', () => {
+        newRoundStyle(playerRound);
+    });
+    
+    if (answare.value == gameNum.result){
+        if (playerRound){
+            for (let i = 0; i < gunWeapon.attackAmount; i++){
+                player2.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
+            }
+            player2Health.value = player2.health;
+            playerRound = !playerRound;
+            newRoundStyle(playerRound);
+
+            gameNum.beRandom();
+            randomMath(gameNum.x, gameNum.y);
+        } else {
+            for (let i = 0; i < gunWeapon.attackAmount; i++){
+                player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
+            }
+            player1Health.value = player1.health;
+            playerRound = !playerRound;
+            newRoundStyle(playerRound);
+
+            gameNum.beRandom();
+            randomMath(gameNum.x, gameNum.y);
+        } 
+    } else {
+        selfInflictDamage(playerRound);
+        playerRound = !playerRound
+        newRoundStyle(playerRound);
+        gameNum.beRandom();
+        randomMath(gameNum.x, gameNum.y);
     }
 }

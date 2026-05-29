@@ -4,14 +4,7 @@ import { selfInflictDamage } from "./generateDamage.js";
 const timer = document.getElementById('nowTime');
 const confirmBtn = document.getElementById('confirmBtn');
 
-let playerRound = false;
-sessionStorage.setItem('playerRoundValue', playerRound);
-
-let gameNum = new NewNumber();
-
 let nowTime = 10;
-
-let actualRound = sessionStorage.getItem('playerRoundValue')
 
 sessionStorage.setItem('timerValue', nowTime);
 
@@ -28,6 +21,5 @@ export function generateTime() {
 }
 
 confirmBtn.addEventListener('click', () => {
-    nowTime = 10
-    playerRound = !playerRound;
+    nowTime = 10;
 })

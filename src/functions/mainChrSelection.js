@@ -1,3 +1,5 @@
+let actualPlayerRound = sessionStorage.getItem('playerRoundValue');
+
 //Recebimento de variáveis externas
 const player1NameValue = sessionStorage.getItem('player1name');
 const player2NameValue = sessionStorage.getItem('player2name');
