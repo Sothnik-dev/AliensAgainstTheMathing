@@ -8,7 +8,7 @@ p {
 }
 
 body {
-    background-image: url(/public/imgs/bgToAliens.png);
+    background-image: url(/public/imgs/bgToAliensMenu.png);
     background-size: cover;
 }
 
@@ -28,8 +28,4 @@ body {
 
     border-radius: 12px;
     background-color: black;
-}
-
-#startBtn :hover {
-    border: solid green 1px;
 }
