@@ -14,21 +14,21 @@ const valueBtn4 = document.getElementsByClassName('changeBtn')[3];
 const startBtn = document.getElementById('startBtn');
 
 //valor inicial da skin base
-player1Skin.src = `/public/imgs/aliensnshiv1.png`;
-player2Skin.src = `/public/imgs/aliensnshiv1.png`;
+player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
+player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
 
 //Switches que definem o valor da src
 playerSelection = (x) => {
     if(x = 1){
         switch (selection1Value){
             case 1:
-                player1Skin.src = `/public/imgs/aliensnshiv1.png`;
+                player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
                 break;
             case 2:
-                player1Skin.src = `/public/imgs/aliensnshiv2.png`;
+                player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv2.png`;
                 break;
             case 3:
-                player1Skin.src = `/public/imgs/aliensnshiv3.png`;
+                player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv3.png`;
                 break
             default:
                 player1Skin.innerHTML = 'algo deu terrivelmente errado'
@@ -39,13 +39,13 @@ playerSelection = (x) => {
     if (x = 2){
         switch (selection2Value){
             case 1:
-                player2Skin.src = `/public/imgs/aliensnshiv1.png`;
+                player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
                 break;
             case 2:
-                player2Skin.src = `/public/imgs/aliensnshiv2.png`;
+                player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv2.png`;
                 break;
             case 3:
-                player2Skin.src = `/public/imgs/aliensnshiv3.png`;
+                player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv3.png`;
                 break
             default:
                 player2Skin.innerHTML = 'algo deu terrivelmente errado'

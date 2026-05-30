@@ -6,6 +6,8 @@ import { randomMath } from "./randomMath.js";
 
 export let playerRound = true;
 
+let playerVictorious = undefined;
+
 //Recebimento de variáveis externas
 const player1NameValue = sessionStorage.getItem('player1name');
 const player2NameValue = sessionStorage.getItem('player2name');
@@ -27,6 +29,8 @@ const confirmBtn = document.getElementById('confirmBtn');
 const startBtn = document.getElementById('startBtn');
 
 const answare = document.getElementById('answare');
+
+const timer = document.getElementById('nowTime');
  
 let fValue = Math.floor(Math.random() * 10) + 1;
 let sValue = Math.floor(Math.random() * 10) + 1;
@@ -38,10 +42,10 @@ randomMath(fValue, sValue);
 
 export function newRoundStyle() {
     if (playerRound) {
-        player1Skin.style.filter = `drop-shadow(0px 0px 15px green)`
+        player1Skin.style.filter = `drop-shadow(0px 0px 5px green)`
         player2Skin.style.filter = `drop-shadow(0px 0px 0px green)`
     } else {
-        player2Skin.style.filter = `drop-shadow(0px 0px 15px green)`
+        player2Skin.style.filter = `drop-shadow(0px 0px 5px green)`
         player1Skin.style.filter = `drop-shadow(0px 0px 0px green)`
     }
 }
@@ -56,9 +60,77 @@ export function selfInflictDamage() {
     }
 }
 
+export function deathDefinition() {
+    if (player1.health <= 0) {
+        playerVictorious = false;
+        
+        player1Skin.style.filter = `drop-shadow(0px 0px 0px green)`
+        player2Skin.style.filter = `drop-shadow(0px 0px 0px green)`
+
+        switch (player1NameValue) {
+            case 'Blormall':
+                player1Skin.src = `/public/imgs/aliensSkins/aliensnshideathv1.png`;
+                break;
+            case 'Cröwboy':
+                player1Skin.src = `/public/imgs/aliensSkins/aliensnshideathv2.png`;
+                break;
+            case 'Bread Burst':
+                player1Skin.src = `/public/imgs/aliensSkins/aliensnshideathv3.png`;
+                break;
+        }
+    } else if (player2.health <= 0) {
+        playerVictorious = true;
+
+        player1Skin.style.filter = `drop-shadow(0px 0px 0px green)`
+        player2Skin.style.filter = `drop-shadow(0px 0px 0px green)`
+        
+        switch (player2NameValue) {
+            case 'Blormall':
+                player2Skin.src = `/public/imgs/aliensSkins/aliensnshideathv1.png`;
+                break;
+            case 'Cröwboy':
+                player2Skin.src = `/public/imgs/aliensSkins/aliensnshideathv2.png`;
+                break;
+            case 'Bread Burst':
+                player2Skin.src = `/public/imgs/aliensSkins/aliensnshideathv3.png`;
+                break;
+        }
+    }
+}
+
+export function victoryCase() {
+    if (playerVictorious == true) {
+        switch(player1NameValue) {
+            case 'Blormall':
+                player1Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv1.png`;
+                break;
+            case 'Cröwboy':
+                player1Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv2.png`;
+                break;
+            case 'Bread Burst':
+                player1Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv3.png`;
+                break;
+        }
+    } else if (playerVictorious == false) {
+        switch(player2NameValue) {
+            case 'Blormall':
+                player2Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv1.png`;
+                break;
+            case 'Cröwboy':
+                player2Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv1.png`;
+                break;
+            case 'Bread Burst':
+                player2Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv3.png`;
+                break;
+        }        
+    }
+}
+
 export function damageOutputAnalisy(){
     confirmBtn.addEventListener('click', () => {
         newRoundStyle(playerRound);
+        deathDefinition();
+        victoryCase();
     });
     
     if (answare.value == gameNum.result){

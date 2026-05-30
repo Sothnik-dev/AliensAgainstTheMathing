@@ -1,6 +1,8 @@
 import { startGame } from "./functions/gameLogic.js";
 import { checkAnsware } from "./functions/checkAnsware.js";
 
+const gameResult = sessionStorage.getItem('gameResult');
+
 // Conteiners capturado por DOM
 const mainPanel = document.getElementById('mainPanel');
 const gameContainer = document.getElementById('gameContainer');

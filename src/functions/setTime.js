@@ -1,6 +1,9 @@
 import { NewNumber } from "./newNumber.js";
 import { selfInflictDamage } from "./generateDamage.js";
 
+import { deathDefinition } from "./generateDamage.js";
+import { victoryCase } from "./generateDamage.js";
+
 const timer = document.getElementById('nowTime');
 const confirmBtn = document.getElementById('confirmBtn');
 

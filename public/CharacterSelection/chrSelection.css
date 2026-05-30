@@ -8,14 +8,18 @@ p {
 }
 
 body {
-    background-image: url(/public/imgs/bgToAliens.png);
+    background-image: url(/public/imgs/aliensBg/bgToAliensChrSelec.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+@keyframes onMovement {0% { transform: translateY(0); } 50% { transform: translateY(-15px);} 100%{transform: translateY(0px)}}
+
 .player {
     width: 200px;
     height: 350px;
+
+    animation: onMovement 10s linear infinite;
 }
 
 .changeBtn {
