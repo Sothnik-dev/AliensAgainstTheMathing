@@ -3,6 +3,11 @@
     src: url(./fonts/KORN.ttf);
 }
 
+@font-face {
+    font-family: 'pixels';
+    src: url(./fonts/Minecraftia-Regular.ttf);
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -14,8 +19,8 @@ body {
 }
 
 p {
-    font-family: korn; 
-    font-size: 3rem;
+    font-family: pixels; 
+    font-size: 1.5rem;
 
     color: green;   
 }

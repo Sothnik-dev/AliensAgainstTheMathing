@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathKnights</title>
+    <title>Aliens against the mathing</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="/public/imgs/favicon/faviconAlien.png" type="image/x-icon">
 
@@ -11,7 +11,7 @@
 <header style="display: flex; justify-content: center;">
     <div id="startBtnContainer">
         <div>
-            <button id="startBtn" style="padding: 1rem; width: 10rem; background-color: black; color: white; font-size: 32px; font-family: korn; border-radius: 12px;">Começar</button>
+            <img style="height: 100px;" id="startBtn" src="/public/imgs/deco/startAliens.png" alt="" srcset="">
         </div>
     </div>
 </header>
@@ -38,7 +38,7 @@
         <div>
             <img  class="player" src="" alt="">
         </div>
-            <div>
+            <div id="endingContainer">
                 <div style="height: 200px; width: 250px; background-color: rgba(17, 17, 17, 0.719); border-radius: 12px; border: solid 1px black;">
                     <div class="spaceAroundContainer" style="height: 150px;">
                         <p id="val1">x</p>
@@ -56,6 +56,11 @@
             </div>
         </div>
     </main>
+    <div id="winMessage">
+        <div style="display: flex; justify-content: center; align-items: center; width: 97.5%; padding: 1rem;">
+            <img style="height: 100px;" id="victoryText" src="" alt="">
+        </div>
+    </div>
 </body>
 <script type="module" src="/src/script.js"></script>
 </html>

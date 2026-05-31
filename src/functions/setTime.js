@@ -7,12 +7,16 @@ import { victoryCase } from "./generateDamage.js";
 const timer = document.getElementById('nowTime');
 const confirmBtn = document.getElementById('confirmBtn');
 
+const player1Health = document.getElementById('player1Health');
+const player2Health = document.getElementById("player2Health");
+
 let nowTime = 10;
 
 sessionStorage.setItem('timerValue', nowTime);
 
 export function generateTime() {
-        setInterval(() => {
+
+    setInterval(() => {
         timer.innerHTML = nowTime;
         nowTime--;
 

@@ -31,6 +31,11 @@ const startBtn = document.getElementById('startBtn');
 const answare = document.getElementById('answare');
 
 const timer = document.getElementById('nowTime');
+
+const ending = document.getElementById('endingContainer');
+const winMessage = document.getElementById('winMessage');
+const victoryText = document.getElementById('victoryText');
+winMessage.style.visibility = 'hidden';
  
 let fValue = Math.floor(Math.random() * 10) + 1;
 let sValue = Math.floor(Math.random() * 10) + 1;
@@ -111,6 +116,13 @@ export function victoryCase() {
                 player1Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv3.png`;
                 break;
         }
+        endingContainer.style.visibility = `hidden`;
+        timer.style.visibility = `hidden`;
+        winMessage.style.visibility = `visible`;
+        victoryText.src = `/public/imgs/deco/winStatep1.png`
+        victoryText.addEventListener('click', () => {
+            window.location.href = `/public/CharacterSelection/chrSelection.html`;
+        })
     } else if (playerVictorious == false) {
         switch(player2NameValue) {
             case 'Blormall':
@@ -122,7 +134,14 @@ export function victoryCase() {
             case 'Bread Burst':
                 player2Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv3.png`;
                 break;
-        }        
+        }    
+        endingContainer.style.visibility = `hidden`;
+        timer.style.visibility = `hidden`;
+        winMessage.style.visibility = `visible`;
+        victoryText.src = `/public/imgs/deco/winStatep2.png`  
+        victoryText.addEventListener('click', () => {
+            window.location.href = `/public/CharacterSelection/chrSelection.html`;
+        })
     }
 }
 
