@@ -129,7 +129,7 @@ export function victoryCase() {
                 player2Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv1.png`;
                 break;
             case 'Cröwboy':
-                player2Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv1.png`;
+                player2Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv2.png`;
                 break;
             case 'Bread Burst':
                 player2Skin.src = `/public/imgs/aliensSkins/aliensnshivictoryv3.png`;
