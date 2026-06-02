@@ -1,5 +1,3 @@
-let actualPlayerRound = sessionStorage.getItem('playerRoundValue');
-
 //Recebimento de variáveis externas
 const player1NameValue = sessionStorage.getItem('player1name');
 const player2NameValue = sessionStorage.getItem('player2name');
@@ -16,6 +14,7 @@ const player2Skin = document.getElementsByClassName('player')[1];
 player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`
 player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`
 
+//A partir de switches, define a skin do player
 export function mainCharacterSelection() {
     //switch para src do player
 switch(player1NameValue){

@@ -1,6 +1,7 @@
 import { startGame } from "./functions/gameLogic.js";
 import { checkAnsware } from "./functions/checkAnsware.js";
 
+//Captura o valor do resultado
 const gameResult = sessionStorage.getItem('gameResult');
 
 // Conteiners capturado por DOM
@@ -15,8 +16,10 @@ const confirmBtn = document.getElementById('confirmBtn');
 // Pra definir se começou ou não o jogo
 let gameStarted = false;
 
+//Define o estado do gameContainer
 gameContainer.style.visibility = (gameStarted) ? 'visible' : 'hidden';
 
+//Captura o valor da vida dos personagens
 let player1Health = sessionStorage.getItem('player1HealthValue');
 let player2Health = sessionStorage.getItem('player2HealthValue');
 

@@ -1,17 +1,12 @@
-import { NewNumber } from "./newNumber.js";
 import { selfInflictDamage } from "./generateDamage.js";
 
-import { deathDefinition } from "./generateDamage.js";
-import { victoryCase } from "./generateDamage.js";
-
+//Capturas DOM
 const timer = document.getElementById('nowTime');
 const confirmBtn = document.getElementById('confirmBtn');
 
-const player1Health = document.getElementById('player1Health');
-const player2Health = document.getElementById("player2Health");
-
 let nowTime = 10;
 
+//Prepara o valor do timer
 sessionStorage.setItem('timerValue', nowTime);
 
 export function generateTime() {

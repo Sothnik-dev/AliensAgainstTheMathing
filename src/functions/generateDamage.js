@@ -1,11 +1,14 @@
+//Imports
 import { Person } from "../components/player.js";
 import { Weapon } from "../components/weapon.js";
 
 import { NewNumber } from "./newNumber.js";
 import { randomMath } from "./randomMath.js";
 
+//Define de quem é a vez, true = p1 e false = p2
 export let playerRound = true;
 
+//Define quem venceu, segue a mesma lógica
 let playerVictorious = undefined;
 
 //Recebimento de variáveis externas
@@ -37,14 +40,17 @@ const winMessage = document.getElementById('winMessage');
 const victoryText = document.getElementById('victoryText');
 winMessage.style.visibility = 'hidden';
  
+//Algum dia eu otimizo isso
 let fValue = Math.floor(Math.random() * 10) + 1;
 let sValue = Math.floor(Math.random() * 10) + 1;
 let result = fValue * sValue;
 
+// Instancia um objeto
 let gameNum = new NewNumber(fValue, sValue, result);
 
 randomMath(fValue, sValue);
 
+//Define qual player ficará com a aura verde
 export function newRoundStyle() {
     if (playerRound) {
         player1Skin.style.filter = `drop-shadow(0px 0px 5px green)`
@@ -55,6 +61,7 @@ export function newRoundStyle() {
     }
 }
 
+//Caso erre ou não responda, aciona essa função que dá dano no player atual
 export function selfInflictDamage() {
     if (playerRound) {
         player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
@@ -65,6 +72,7 @@ export function selfInflictDamage() {
     }
 }
 
+//Define o estado de morte através do life do player
 export function deathDefinition() {
     if (player1.health <= 0) {
         playerVictorious = false;
@@ -103,6 +111,7 @@ export function deathDefinition() {
     }
 }
 
+//Define o bool do vitorioso através do derrotado
 export function victoryCase() {
     if (playerVictorious == true) {
         switch(player1NameValue) {
@@ -145,6 +154,7 @@ export function victoryCase() {
     }
 }
 
+//Função principal
 export function damageOutputAnalisy(){
     confirmBtn.addEventListener('click', () => {
         newRoundStyle(playerRound);
