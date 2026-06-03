@@ -92,6 +92,14 @@ progress{
     color: white;
 }
 
+#player1Health, #player2Health {
+    background-color: #cccccc;
+    border-radius: 4px;
+    overflow: hidden;
+
+    transition: width 2s ease 1s;
+}
+
 #mathArea {
     height: 220px;
     width: 280px;
