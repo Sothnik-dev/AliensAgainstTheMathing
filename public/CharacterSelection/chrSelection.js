@@ -17,6 +17,41 @@ const startBtn = document.getElementById('startBtn');
 player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
 player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
 
+//Área para o audio
+const chrSelectionMusic = document.getElementById('chrSelectionMusic');
+const soundIcon = document.getElementById('soundIcon');
+
+let canPlay = true;
+
+window.addEventListener('load', () => {
+    if (typeof chrSelectionMusic.loop == 'boolean'){
+        chrSelectionMusic.play();
+        chrSelectionMusic.loop = true;
+    } else {
+            chrSelectionMusic.addEventListener('ended', () => {
+            chrSelectionMusic.play();
+        })
+    }
+})
+
+soundIcon.addEventListener('click', () => {
+    canPlay = !canPlay;
+    soundIcon.src = (canPlay) ? `/public/imgs/AudioSettings/soundIcon.png` : `/public/imgs/AudioSettings/soundIconNo.png`
+
+    if (canPlay){
+        if (typeof chrSelectionMusic.loop == 'boolean'){
+            chrSelectionMusic.play();
+            chrSelectionMusic.loop = true;
+        } else {
+                chrSelectionMusic.addEventListener('ended', () => {
+                chrSelectionMusic.play();
+            })
+        }
+    } else {
+        chrSelectionMusic.pause();
+    }
+})
+
 //Switches que definem o valor da src
 playerSelection = (x) => {
     if(x = 1){

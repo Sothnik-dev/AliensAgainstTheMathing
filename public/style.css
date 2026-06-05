@@ -39,6 +39,14 @@ progress{
     justify-content: center;
 }
 
+.flexEnd {
+    display: flex; 
+    justify-content: end;
+    align-items: center;
+
+    margin-right: 10px;
+}
+
 .flexEndP{
     display: flex;
     justify-content: end;

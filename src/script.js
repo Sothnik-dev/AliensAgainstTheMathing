@@ -25,6 +25,41 @@ let player2Health = sessionStorage.getItem('player2HealthValue');
 
 const player1Skin = document.getElementsByClassName('player')[0];
 
+//Area do audio
+const mainGameAudio = document.getElementById('mainGameAudio');
+const soundIcon = document.getElementById('soundIcon');
+
+let canPlay = true;
+
+window.addEventListener('load', () => {
+    if (typeof mainGameAudio.loop == 'boolean'){
+        mainGameAudio.play();
+        mainGameAudio.loop = true;
+    } else {
+            mainGameAudio.addEventListener('ended', () => {
+            mainGameAudio.play();
+        })
+    }
+})
+
+soundIcon.addEventListener('click', () => {
+    canPlay = !canPlay;
+    soundIcon.src = (canPlay) ? `/public/imgs/AudioSettings/soundIcon.png` : `/public/imgs/AudioSettings/soundIconNo.png`
+
+    if (canPlay){
+        if (typeof mainGameAudio.loop == 'boolean'){
+            mainGameAudio.play();
+            mainGameAudio.loop = true;
+        } else {
+                mainGameAudio.addEventListener('ended', () => {
+                mainGameAudio.play();
+            })
+        }
+    } else {
+        mainGameAudio.pause();
+    }
+})
+
 // "Inicia o jogo"
 startBtn.addEventListener('click', () => {
     gameStarted = true;
