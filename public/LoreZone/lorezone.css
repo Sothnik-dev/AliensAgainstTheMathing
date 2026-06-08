@@ -10,12 +10,20 @@
     padding: 1rem;
 }
 
+.spaceBetween {
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @keyframes slide-right {0% { transform: translateX(100px); filter: opacity(0);} 100% { transform: translateX(0px); filter: opacity(1);}}
 @keyframes slide-left {0% { transform: translateX(-100px); filter: opacity(0); } 100% { transform: translateX(0px); filter: opacity(1);} }
 
 
 .loreBlock {
-    background-color: red;
+    background-color: black;
 
     padding: 1rem;
 
