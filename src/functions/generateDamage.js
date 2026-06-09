@@ -8,6 +8,8 @@ import { randomMath } from "./randomMath.js";
 import { deathDefinition } from "./winDefeatCondition.js";
 import { victoryCase } from "./winDefeatCondition.js";
 
+import { newRoundStyle } from "./playerAura.js";
+
 //Define de quem é a vez, true = p1 e false = p2
 export let playerRound = true;
 
@@ -44,17 +46,6 @@ let gameNum = new NewNumber(fValue, sValue, result);
 
 randomMath(fValue, sValue);
 
-//Define qual player ficará com a aura verde
-export function newRoundStyle() {
-    if (playerRound) {
-        player1Skin.style.filter = `drop-shadow(0px 0px 5px green)`
-        player2Skin.style.filter = `drop-shadow(0px 0px 0px green)`
-    } else {
-        player2Skin.style.filter = `drop-shadow(0px 0px 5px green)`
-        player1Skin.style.filter = `drop-shadow(0px 0px 0px green)`
-    }
-}
-
 //Caso erre ou não responda, aciona essa função que dá dano no player atual
 export function selfInflictDamage() {
     if (playerRound) {
@@ -65,6 +56,13 @@ export function selfInflictDamage() {
         player2Health.value = player2.health;
     }
 }
+
+//Permite responder pelo enter, finalmente
+answare.addEventListener('keyup', (event) => {
+    if (event.key == 'Enter'){
+        confirmBtn.click();
+    }
+})
 
 //Função principal
 export function damageOutputAnalisy(){

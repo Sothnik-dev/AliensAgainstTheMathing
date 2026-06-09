@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'pixels';
+    src: url(/public/fonts/Minecraftia-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: pixels;
+}
+
+body {
+    background-image: url(/public/imgs/aliensBg/bgToAliensOptions.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+select{
+    background-color: #df7126;
+    border: solid black 2px;
+
+    padding: 6px;
+}
+
+.push {
+    margin-bottom: 3rem;
+}
+
+.flexEnd {
+    display: flex; 
+    justify-content: end;
+    align-items: center;
+    padding: 1rem;
+}
+
+.displayCenter {
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#optBtn {
+    background-color: #df7126;
+    border: solid black 2px;
+}

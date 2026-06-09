@@ -1,6 +1,14 @@
 * {
+    scroll-behavior: smooth;
+
     padding: 0;
     margin: 0;
+}
+
+body {
+    background-image: url(/public/imgs/aliensBg/bgToAliensLore.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .flexEnd {
@@ -23,7 +31,7 @@
 
 
 .loreBlock {
-    background-color: black;
+    background-color: rgb(32, 32, 32);
 
     padding: 1rem;
 
