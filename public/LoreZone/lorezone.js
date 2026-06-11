@@ -8,6 +8,41 @@ const fowardBtn = document.getElementsByClassName('fowardBtn')[1];
 
 let pageValue = 0;
 
+//Área de musica
+const loreZoneBackgroundMusic = document.getElementById('loreZoneBackgroundMusic');
+const soundIcon = document.getElementById('soundIcon');
+
+let canPlay = true;
+
+window.addEventListener('load', () => {
+    if (typeof loreZoneBackgroundMusic.loop == 'boolean'){
+        loreZoneBackgroundMusic.play();
+        loreZoneBackgroundMusic.loop = true;
+    } else {
+            loreZoneBackgroundMusic.addEventListener('ended', () => {
+            loreZoneBackgroundMusic.play();
+        })
+    }
+}) 
+
+soundIcon.addEventListener('click', () => {
+    canPlay = !canPlay;
+    soundIcon.src = (canPlay) ? `/public/imgs/AudioSettings/soundIcon.png` : `/public/imgs/AudioSettings/soundIconNo.png`
+
+    if (canPlay){
+        if (typeof loreZoneBackgroundMusic.loop == 'boolean'){
+            loreZoneBackgroundMusic.play();
+            loreZoneBackgroundMusic.loop = true;
+        } else {
+                loreZoneBackgroundMusic.addEventListener('ended', () => {
+                loreZoneBackgroundMusic.play();
+            })
+        }
+    } else {
+        loreZoneBackgroundMusic.pause();
+    }
+})
+
 if (pageValue < -1){
     pageValue = 0;
 } else if (pageValue > 2){

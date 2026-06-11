@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
             chrSelectionMusic.play();
         })
     }
-})
+}) 
 
 soundIcon.addEventListener('click', () => {
     canPlay = !canPlay;
