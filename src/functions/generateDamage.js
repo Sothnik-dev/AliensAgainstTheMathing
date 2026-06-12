@@ -9,6 +9,7 @@ import { deathDefinition } from "./winDefeatCondition.js";
 import { victoryCase } from "./winDefeatCondition.js";
 
 import { newRoundStyle } from "./playerAura.js";
+import { checkDificultyDamage } from "./damageDiffValue.js";
 
 //Define de quem é a vez, true = p1 e false = p2
 export let playerRound = true;
@@ -16,6 +17,7 @@ export let playerRound = true;
 //Recebimento de variáveis externas
 const player1NameValue = sessionStorage.getItem('player1name');
 const player2NameValue = sessionStorage.getItem('player2name');
+const diffValue = sessionStorage.getItem('diffValue')
 
 //Instanciar os objetos
 const gunWeapon = new Weapon('Gun', 3, 2, 10);
@@ -36,9 +38,9 @@ const answare = document.getElementById('answare');
 
 const timer = document.getElementById('nowTime');
  
-//Algum dia eu otimizo isso
-let fValue = Math.floor(Math.random() * 10) + 1;
-let sValue = Math.floor(Math.random() * 10) + 1;
+//Algum dia eu otimizo isso, obs: ainda não otimizei
+let fValue = Math.floor((Math.random() * 10) + 1) * checkDificultyDamage();
+let sValue = Math.floor((Math.random() * 10) + 1) * checkDificultyDamage();
 let result = fValue * sValue;
 
 // Instancia um objeto

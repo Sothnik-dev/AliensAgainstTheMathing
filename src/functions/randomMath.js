@@ -1,7 +1,7 @@
 import { NewNumber } from "./newNumber.js";
 
-let fValue = Math.floor(Math.random() * 10) + 1;
-let sValue = Math.floor(Math.random() * 10) + 1;
+let fValue = Math.floor(Math.random() * 10) + 1
+let sValue = Math.floor(Math.random() * 10) + 1
 let result = fValue * sValue;
 
 //função principal

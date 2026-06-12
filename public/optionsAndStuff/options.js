@@ -1,40 +1,17 @@
+import { musicPlayer } from "../../src/functions/musicPlayer.js";
+import { checkMusicValue } from "../../src/functions/checkMusicValue.js";
+
 const diffValue = document.getElementById('dificultyValue');
 const gayValue = document.getElementById('gayValue');
 
 //Área de musica
 const optBackgroundMusic = document.getElementById('optBackgroundMusic');
-const AudioSettings = document.getElementById('audioIcon');
+const audioIcon = document.getElementById('audioIcon');
 
 let canPlay = true;
 
-window.addEventListener('load', () => {
-    if (typeof optBackgroundMusic.loop == 'boolean'){
-        optBackgroundMusic.play();
-        optBackgroundMusic.loop = true;
-    } else {
-            optBackgroundMusic.addEventListener('ended', () => {
-            optBackgroundMusic.play();
-        })
-    }
-}) 
-
-AudioSettings.addEventListener('click', () => {
-    canPlay = !canPlay;
-    AudioSettings.src = (canPlay) ? `/public/imgs/AudioSettings/soundIcon.png` : `/public/imgs/AudioSettings/soundIconNo.png`
-
-    if (canPlay){
-        if (typeof optBackgroundMusic.loop == 'boolean'){
-            optBackgroundMusic.play();
-            optBackgroundMusic.loop = true;
-        } else {
-                optBackgroundMusic.addEventListener('ended', () => {
-                optBackgroundMusic.play();
-            })
-        }
-    } else {
-        optBackgroundMusic.pause();
-    }
-})
+musicPlayer(optBackgroundMusic)
+checkMusicValue(audioIcon, optBackgroundMusic, canPlay)
 
 const goToMain = document.getElementById('optBtn').addEventListener('click', () => {
     sessionStorage.setItem('diffValue', diffValue.value);

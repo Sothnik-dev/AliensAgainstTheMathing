@@ -1,6 +1,9 @@
 import { startGame } from "./functions/gameLogic.js";
 import { checkAnsware } from "./functions/checkAnsware.js";
 
+import { musicPlayer } from "./functions/musicPlayer.js";
+import { checkMusicValue } from "./functions/checkMusicValue.js";
+
 //Captura o valor do resultado
 const gameResult = sessionStorage.getItem('gameResult');
 
@@ -31,34 +34,8 @@ const soundIcon = document.getElementById('soundIcon');
 
 let canPlay = true;
 
-window.addEventListener('load', () => {
-    if (typeof mainGameAudio.loop == 'boolean'){
-        mainGameAudio.play();
-        mainGameAudio.loop = true;
-    } else {
-            mainGameAudio.addEventListener('ended', () => {
-            mainGameAudio.play();
-        })
-    }
-})
-
-soundIcon.addEventListener('click', () => {
-    canPlay = !canPlay;
-    soundIcon.src = (canPlay) ? `/public/imgs/AudioSettings/soundIcon.png` : `/public/imgs/AudioSettings/soundIconNo.png`
-
-    if (canPlay){
-        if (typeof mainGameAudio.loop == 'boolean'){
-            mainGameAudio.play();
-            mainGameAudio.loop = true;
-        } else {
-                mainGameAudio.addEventListener('ended', () => {
-                mainGameAudio.play();
-            })
-        }
-    } else {
-        mainGameAudio.pause();
-    }
-})
+musicPlayer(mainGameAudio);
+checkMusicValue(soundIcon, mainGameAudio, canPlay);
 
 // "Inicia o jogo"
 startBtn.addEventListener('click', () => {

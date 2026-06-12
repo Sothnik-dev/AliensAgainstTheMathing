@@ -1,3 +1,6 @@
+import { musicPlayer } from "../../src/functions/musicPlayer.js";
+import { checkMusicValue } from "../../src/functions/checkMusicValue.js";
+
 const lb1 = document.getElementsByClassName('loreBlock')[0];
 const lb2 = document.getElementsByClassName('loreBlock')[1];
 const lb3 = document.getElementsByClassName('loreBlock')[2];
@@ -14,34 +17,8 @@ const soundIcon = document.getElementById('soundIcon');
 
 let canPlay = true;
 
-window.addEventListener('load', () => {
-    if (typeof loreZoneBackgroundMusic.loop == 'boolean'){
-        loreZoneBackgroundMusic.play();
-        loreZoneBackgroundMusic.loop = true;
-    } else {
-            loreZoneBackgroundMusic.addEventListener('ended', () => {
-            loreZoneBackgroundMusic.play();
-        })
-    }
-}) 
-
-soundIcon.addEventListener('click', () => {
-    canPlay = !canPlay;
-    soundIcon.src = (canPlay) ? `/public/imgs/AudioSettings/soundIcon.png` : `/public/imgs/AudioSettings/soundIconNo.png`
-
-    if (canPlay){
-        if (typeof loreZoneBackgroundMusic.loop == 'boolean'){
-            loreZoneBackgroundMusic.play();
-            loreZoneBackgroundMusic.loop = true;
-        } else {
-                loreZoneBackgroundMusic.addEventListener('ended', () => {
-                loreZoneBackgroundMusic.play();
-            })
-        }
-    } else {
-        loreZoneBackgroundMusic.pause();
-    }
-})
+musicPlayer(loreZoneBackgroundMusic);
+checkMusicValue(soundIcon, loreZoneBackgroundMusic, canPlay);
 
 if (pageValue < -1){
     pageValue = 0;
@@ -69,7 +46,7 @@ fowardBtn.addEventListener('click', () => {
     getValueInfo();
 })
 
-getValueInfo = () => {
+function getValueInfo() {
     switch (pageValue) {
         case 0:
             lb1.src = `/public/imgs/loreImgs/loreBlock1Val1.png`

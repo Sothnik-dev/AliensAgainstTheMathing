@@ -1,3 +1,6 @@
+import { musicPlayer } from "../../src/functions/musicPlayer.js";
+import { checkMusicValue } from "../../src/functions/checkMusicValue.js";
+
 // Valores de seleção p1 e p2
 let selection1Value = 1;
 let selection2Value = 1;
@@ -23,37 +26,11 @@ const soundIcon = document.getElementById('soundIcon');
 
 let canPlay = true;
 
-window.addEventListener('load', () => {
-    if (typeof chrSelectionMusic.loop == 'boolean'){
-        chrSelectionMusic.play();
-        chrSelectionMusic.loop = true;
-    } else {
-            chrSelectionMusic.addEventListener('ended', () => {
-            chrSelectionMusic.play();
-        })
-    }
-}) 
-
-soundIcon.addEventListener('click', () => {
-    canPlay = !canPlay;
-    soundIcon.src = (canPlay) ? `/public/imgs/AudioSettings/soundIcon.png` : `/public/imgs/AudioSettings/soundIconNo.png`
-
-    if (canPlay){
-        if (typeof chrSelectionMusic.loop == 'boolean'){
-            chrSelectionMusic.play();
-            chrSelectionMusic.loop = true;
-        } else {
-                chrSelectionMusic.addEventListener('ended', () => {
-                chrSelectionMusic.play();
-            })
-        }
-    } else {
-        chrSelectionMusic.pause();
-    }
-})
+musicPlayer(chrSelectionMusic);
+checkMusicValue(soundIcon, chrSelectionMusic, canPlay);
 
 //Switches que definem o valor da src
-playerSelection = (x) => {
+function playerSelection(x){
     if(x = 1){
         switch (selection1Value){
             case 1:
@@ -90,7 +67,7 @@ playerSelection = (x) => {
 }
 
 // Diminui o valor do selection pro player1 e player2
-negValue = (x, y) => {
+function negValue(x, y){
     if (x == 1){
         if (selection1Value <= 1){
         selection1Value = 3;
@@ -112,7 +89,7 @@ negValue = (x, y) => {
 }
 
 // Aumenta o valor do selection pro player1 e player 2
-posValue = (x, y) => {
+function posValue (x, y) {
     if (x == 1){
         if (selection1Value >= 3){
             selection1Value = 1;
