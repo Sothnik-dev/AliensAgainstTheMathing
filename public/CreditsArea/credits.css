@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'pixels';
+    src: url(/public/fonts/Minecraftia-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/public/imgs/aliensBg/bgToAliensEverything.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+p {
+    font-family: pixels;
+
+    color: #f8f6f0;
+    font-size: 1rem;
+
+    filter: drop-shadow(0px 0px 15px black);
+}
+
+.flexEnd {
+    display: flex; 
+    justify-content: end;
+    align-items: center;
+    padding: 1rem;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding: 1rem;
+}

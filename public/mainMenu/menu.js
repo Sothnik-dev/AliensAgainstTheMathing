@@ -33,3 +33,7 @@ const goTo = document.getElementById('startBtn').addEventListener('click', () =>
 const goToOpt = document.getElementById('optionsBtn').addEventListener('click', () => {
     window.location.href = `/public/optionsAndStuff/options.html`;
 })
+
+const creditsBtn = document.getElementById('creditsBtn').addEventListener('click', () => {
+    window.location.href = `/public/CreditsArea/credits.html`
+})
