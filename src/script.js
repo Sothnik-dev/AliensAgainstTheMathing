@@ -4,9 +4,6 @@ import { checkAnsware } from "./functions/checkAnsware.js";
 import { musicPlayer } from "./functions/musicPlayer.js";
 import { checkMusicValue } from "./functions/checkMusicValue.js";
 
-//Captura o valor do resultado
-const gameResult = sessionStorage.getItem('gameResult');
-
 // Conteiners capturado por DOM
 const mainPanel = document.getElementById('mainPanel');
 const gameContainer = document.getElementById('gameContainer');
@@ -48,9 +45,10 @@ startBtn.addEventListener('click', () => {
     checkAnsware();
 
     while (gameStarted) {
-        if (player1Health >= 0 || player1Health >= 0) {
+        gameStarted = (player1Health <= 0 || player2Health <= 0) ? false : true;
+
+        if (!gameStarted) {
             startGame();
-            gameStarted = !gameStarted;
         }
     }
 })

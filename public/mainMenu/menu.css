@@ -23,6 +23,14 @@ body {
     align-items: center;
 }
 
+.flexCenterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+
+}
+
 .flexEnd {
     display: flex; 
     justify-content: end;
@@ -45,15 +53,15 @@ body {
     width: 400px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 568px) {
     body {
         background-image: url(/public/imgs/aliensBg/bgToAliensMenu.png);
-        background-size: cover;
+        background-size: contain;
     }
 
     #audioIcon {
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        width: 35px;
 }
 
     .flexCenter {
@@ -64,11 +72,12 @@ body {
 
     .titlePattern {
         height: 75px; 
-        width: 375px;
-}
+        width: 400px;
 
-    .btnPattern {
-        height: 65px;
-        width: 250px;
+        padding-bottom: 3rem;
 }
+    .btnPattern {
+        height: 95px;
+        width: 365px;
+    }
 }

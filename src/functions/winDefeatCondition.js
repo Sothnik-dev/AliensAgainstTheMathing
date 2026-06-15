@@ -24,6 +24,7 @@ const player2NameValue = sessionStorage.getItem('player2name');
 export function deathDefinition() {
     if (player1Health.value <= 0) {
         playerVictorious = false;
+        sessionStorage.setItem('playerVictorious', playerVictorious)
         
         player1Skin.style.filter = `drop-shadow(0px 0px 0px green)`
         player2Skin.style.filter = `drop-shadow(0px 0px 0px green)`
@@ -41,6 +42,7 @@ export function deathDefinition() {
         }
     } else if (player2Health.value <= 0) {
         playerVictorious = true;
+        sessionStorage.setItem('playerVictorious', playerVictorious)
 
         player1Skin.style.filter = `drop-shadow(0px 0px 0px green)`
         player2Skin.style.filter = `drop-shadow(0px 0px 0px green)`

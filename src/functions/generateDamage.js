@@ -38,7 +38,7 @@ const answare = document.getElementById('answare');
 
 const timer = document.getElementById('nowTime');
  
-//Algum dia eu otimizo isso, obs: ainda não otimizei
+//Algum dia eu otimizo isso, obs: ainda não otimizei obs2: e não vou otimizar kkkkkk
 let fValue = Math.floor((Math.random() * 10) + 1) * checkDificultyDamage();
 let sValue = Math.floor((Math.random() * 10) + 1) * checkDificultyDamage();
 let result = fValue * sValue;
