@@ -15,6 +15,11 @@ body {
 
 @keyframes onMovement {0% { transform: translateY(0); } 50% { transform: translateY(-15px);} 100%{transform: translateY(0px)}}
 
+#soundIcon {
+    height: 50px; 
+    width: 50px;
+}
+
 .player {
     width: 200px;
     height: 350px;
@@ -45,6 +50,8 @@ body {
 .flexCenter {
     display: flex;
     justify-content: center;
+
+    padding: 2rem;
 }
 
 .flexEnd {
@@ -54,9 +61,53 @@ body {
     padding: 1rem;
 }
 
-#startBtn {
-    color: green;
+.imgPattern {
+    width: 100px; 
+    height: 75px; 
+    padding: 2rem; 
+    filter: drop-shadow(0px 0px 5px black);
+}
 
+#startBtn {
     border-radius: 12px;
     background-color: black;
+
+    width: 90px; 
+    height: 50px; 
+    filter: drop-shadow(0px 0px 5px black);
+}
+
+@media only screen and (max-width: 600px) {
+    #startBtn {
+        width: 35px;
+        height: 20px;
+    }
+
+    #soundIcon{
+        width: 40px;
+        height: 40px;
+    }
+
+    .spaceAroundContainer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        padding-top: 25%;
+}
+    
+    .changeBtn{
+        font-size: 1rem;
+    }
+
+    .player {
+        height: 150px;
+        width: 75px;
+    }
+
+    .imgPattern {
+        width: 35px;
+        height: 20px;
+        padding: 1rem; 
+    }
 }

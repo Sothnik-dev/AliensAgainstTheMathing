@@ -29,3 +29,46 @@ body {
     align-items: center;
     padding: 1rem;
 }
+
+#audioIcon {
+    height: 50px;
+    width: 50px;
+}
+
+.titlePattern {
+    height: 100px; 
+    width: 600px;
+}
+
+.btnPattern {
+    height: 100px;
+    width: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-image: url(/public/imgs/aliensBg/bgToAliensMenu.png);
+        background-size: cover;
+    }
+
+    #audioIcon {
+        height: 40px;
+        width: 40px;
+}
+
+    .flexCenter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+    .titlePattern {
+        height: 75px; 
+        width: 375px;
+}
+
+    .btnPattern {
+        height: 65px;
+        width: 250px;
+}
+}

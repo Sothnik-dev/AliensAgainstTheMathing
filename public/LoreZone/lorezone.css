@@ -39,6 +39,11 @@ body {
     width: 1000px;
 }
 
+#soundIcon {
+    height: 50px;
+    width: 50px;
+}
+
 .blocker {
     padding: 1rem;
 }
@@ -57,4 +62,20 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    #soundIcon{
+        height: 40px;
+        width: 40px;
+    }
+
+    .loreBlock {
+        background-color: rgb(32, 32, 32);
+
+        padding: 1rem;
+
+        height: 75px; 
+        width: 350px;
+    }
 }
