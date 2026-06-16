@@ -1,5 +1,5 @@
 //Define quem venceu, segue a mesma lógica
-let playerVictorious = undefined;
+let playerVictorious = null;
 
 //Captura de valores através de DOM
 const player1Skin = document.getElementsByClassName('player')[0];
@@ -79,9 +79,12 @@ export function victoryCase() {
         timerContainer.style.visibility = `hidden`;
         winMessage.style.visibility = `visible`;
         victoryText.src = `/public/imgs/deco/winStatep1.png`
+
         victoryText.addEventListener('click', () => {
-            window.location.href = `/public/CharacterSelection/chrSelection.html`;
-        })
+        playerVictorious = null
+        sessionStorage.setItem('playerVictorious', playerVictorious)
+        window.location.href = `/public/CharacterSelection/chrSelection.html`;
+    })
     } else if (playerVictorious == false) {
         switch(player2NameValue) {
             case 'Blormall':
@@ -97,9 +100,12 @@ export function victoryCase() {
         endingContainer.style.visibility = `hidden`;
         timerContainer.style.visibility = `hidden`;
         winMessage.style.visibility = `visible`;
-        victoryText.src = `/public/imgs/deco/winStatep2.png`  
+        victoryText.src = `/public/imgs/deco/winStatep2.png` 
+
         victoryText.addEventListener('click', () => {
-            window.location.href = `/public/CharacterSelection/chrSelection.html`;
-        })
+        playerVictorious = null
+        sessionStorage.setItem('playerVictorious', playerVictorious)
+        window.location.href = `/public/CharacterSelection/chrSelection.html`;
+    }) 
     }
 }

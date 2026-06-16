@@ -21,7 +21,6 @@ sessionStorage.setItem('timerValue', nowTime);
 export function generateTime() {
     if (player1Health.value > 0 || player2Health.value > 0) {
         setInterval(() => {
-            console.log(player1Health.value);
             timer.innerHTML = nowTime;
             nowTime--;
             if(nowTime == -1){

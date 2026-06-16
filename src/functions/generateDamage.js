@@ -9,6 +9,7 @@ import { deathDefinition } from "./winDefeatCondition.js";
 import { victoryCase } from "./winDefeatCondition.js";
 
 import { newRoundStyle } from "./playerAura.js";
+import { damageOutputVisual } from "./damageOutput.js";
 import { checkDificultyDamage } from "./damageDiffValue.js";
 
 //Define de quem é a vez, true = p1 e false = p2
@@ -50,12 +51,15 @@ randomMath(fValue, sValue);
 
 //Caso erre ou não responda, aciona essa função que dá dano no player atual
 export function selfInflictDamage() {
-    if (playerRound) {
-        player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
-        player1Health.value = player1.health;
-    } else {
-        player2.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
-        player2Health.value = player2.health;
+        if (playerRound) {
+            player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
+            player1Health.value = player1.health;
+            damageOutputVisual(!playerRound);
+
+        } else {
+            player2.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
+            player2Health.value = player2.health;
+            damageOutputVisual(!playerRound);
     }
 }
 
@@ -78,21 +82,21 @@ export function damageOutputAnalisy(){
         if (playerRound){
             for (let i = 0; i < gunWeapon.attackAmount; i++){
                 player2.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
+                damageOutputVisual(playerRound);
             }
             player2Health.value = player2.health;
             playerRound = !playerRound;
             newRoundStyle(playerRound);
-
             gameNum.beRandom();
             randomMath(gameNum.x, gameNum.y);
         } else {
             for (let i = 0; i < gunWeapon.attackAmount; i++){
                 player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
+                damageOutputVisual(playerRound);
             }
             player1Health.value = player1.health;
             playerRound = !playerRound;
             newRoundStyle(playerRound);
-
             gameNum.beRandom();
             randomMath(gameNum.x, gameNum.y);
         } 
