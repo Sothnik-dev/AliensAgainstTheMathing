@@ -19,10 +19,6 @@ let playerVictorious = sessionStorage.getItem('playerVictorious');
 let p1PlayerRewind = player1SkinValue;
 let p2PlayerRewind = player2SkinValue;
 
-setTimeout(() => {
-    console.log(playerVictorious);
-})
-
 export function damageOutputVisual(round) {
     if (round) {
         if (player2Health.value > 0){
@@ -57,7 +53,9 @@ export function damageOutputVisual(round) {
                     break;
             }
             setTimeout(() => {
-                player1Skin.src = p1PlayerRewind;
+                if (player1Health.value > 0) {
+                    player1Skin.src = p1PlayerRewind;
+                }
             }, 750)
         }
     }

@@ -19,16 +19,17 @@ checkDificulty(nowTime);
 sessionStorage.setItem('timerValue', nowTime);
 
 export function generateTime() {
-    if (player1Health.value > 0 || player2Health.value > 0) {
-        setInterval(() => {
-            timer.innerHTML = nowTime;
-            nowTime--;
-            if(nowTime == -1){
-                nowTime = checkDificulty();
+    setInterval(() => {
+        timer.innerHTML = nowTime;
+        nowTime--;
+        if(nowTime == -1){
+            nowTime = checkDificulty();
+            if (player1Health.value > 0 && player2Health.value > 0) {
                 selfInflictDamage();
             }
-        }, 1000)
-    }
+        }
+    }, 1000)
+    
 }
 
 confirmBtn.addEventListener('click', () => {

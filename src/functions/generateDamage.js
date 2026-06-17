@@ -50,16 +50,20 @@ let gameNum = new NewNumber(fValue, sValue, result);
 randomMath(fValue, sValue);
 
 //Caso erre ou não responda, aciona essa função que dá dano no player atual
+//Resolver bug aqui depois
 export function selfInflictDamage() {
-        if (playerRound) {
-            player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
-            player1Health.value = player1.health;
-            damageOutputVisual(!playerRound);
-
-        } else {
-            player2.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
-            player2Health.value = player2.health;
-            damageOutputVisual(!playerRound);
+    if (playerRound) {
+        player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
+        player1Health.value = player1.health;
+        if (player1Health.value > 0) {
+            damageOutputVisual(false);
+        }
+    } else {
+        player2.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
+        player2Health.value = player2.health;
+        if (player2Health.value > 0) {
+            damageOutputVisual(true);
+        }
     }
 }
 
