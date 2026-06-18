@@ -1,3 +1,5 @@
+import { fastChrSelection } from "./fastSelection.js";
+
 //Recebimento de variáveis externas
 const player1NameValue = sessionStorage.getItem('player1name');
 const player2NameValue = sessionStorage.getItem('player2name');
@@ -16,37 +18,9 @@ player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`
 
 //A partir de switches, define a skin do player
 export function mainCharacterSelection() {
-    //switch para src do player
-switch(player1NameValue){
-    case 'Blormall':
-        player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
-        sessionStorage.setItem('player1SkinValue', '/public/imgs/aliensSkins/aliensnshiv1.png');
-        break;
-    case 'Cröwboy':
-        player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv2.png`;
-        sessionStorage.setItem('player1SkinValue', '/public/imgs/aliensSkins/aliensnshiv2.png');
-        break;
-    case 'Bread Burst':
-        player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv3.png`;
-        sessionStorage.setItem('player1SkinValue', '/public/imgs/aliensSkins/aliensnshiv3.png');
-        break;
-}
+    fastChrSelection(player1NameValue, player1Skin, "player1Skin");
+    fastChrSelection(player2NameValue, player2Skin, "player2Skin");
 
-switch(player2NameValue){
-    case 'Blormall':
-        player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
-        sessionStorage.setItem('player2SkinValue', '/public/imgs/aliensSkins/aliensnshiv1.png');
-        break;
-    case 'Cröwboy':
-        player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv2.png`;
-        sessionStorage.setItem('player2SkinValue', '/public/imgs/aliensSkins/aliensnshiv2.png');
-        break;
-    case 'Bread Burst':
-        player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv3.png`;
-        sessionStorage.setItem('player2SkinValue', '/public/imgs/aliensSkins/aliensnshiv3.png');
-        break;
-}
-
-player1NameDOM.innerHTML = player1NameValue;
-player2NameDOM.innerHTML = player2NameValue;
+    player1NameDOM.innerHTML = player1NameValue;
+    player2NameDOM.innerHTML = player2NameValue;
 }

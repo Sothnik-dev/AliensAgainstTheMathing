@@ -36,35 +36,40 @@ const player2Skin = document.getElementsByClassName('player')[1];
 const confirmBtn = document.getElementById('confirmBtn');
 const startBtn = document.getElementById('startBtn');
 const answare = document.getElementById('answare');
-
-const timer = document.getElementById('nowTime');
  
 //Algum dia eu otimizo isso, obs: ainda não otimizei obs2: e não vou otimizar kkkkkk
 let fValue = Math.floor((Math.random() * 10) + 1) * checkDificultyDamage();
 let sValue = Math.floor((Math.random() * 10) + 1) * checkDificultyDamage();
-let result = fValue * sValue;
 
 // Instancia um objeto
-let gameNum = new NewNumber(fValue, sValue, result);
+let gameNum = new NewNumber(fValue, sValue, fValue * sValue);
 
 randomMath(fValue, sValue);
 
-//Caso erre ou não responda, aciona essa função que dá dano no player atual
-//Resolver bug aqui depois
-export function selfInflictDamage() {
-    if (playerRound) {
-        player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
-        player1Health.value = player1.health;
-        if (player1Health.value > 0) {
-            damageOutputVisual(false);
-        }
-    } else {
-        player2.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
-        player2Health.value = player2.health;
-        if (player2Health.value > 0) {
-            damageOutputVisual(true);
-        }
+//function para facilitar o dano e logo abaixo para o selfDamage
+const damageEntry = (amount, objBase, damage, kritz, playerHealth) => {
+    for (let i = 0; i < amount; i++){
+        objBase.damageOutput(damage, kritz);
     }
+    playerHealth.value = objBase.health;
+    damageOutputVisual(playerRound);
+    playerRound = !playerRound;
+    newRoundStyle(playerRound);
+    gameNum.beRandom();
+    randomMath(gameNum.x, gameNum.y);
+}
+
+const selfInflictShortCut = (player, damage, kritz, health, turn) => {
+    player.damageOutput(damage, kritz);
+    health.value = player.health;
+    if (health.value > 0) {
+        damageOutputVisual(turn);
+    }
+}
+
+//Caso erre ou não responda, aciona essa função que dá dano no player atual
+export function selfInflictDamage() {
+    (playerRound) ? selfInflictShortCut(player1, gunWeapon.damage, gunWeapon.kritzProb, player1Health, false) : selfInflictShortCut(player2, gunWeapon.damage, gunWeapon.kritzProb, player2Health, true);
 }
 
 //Permite responder pelo enter, finalmente
@@ -83,27 +88,7 @@ export function damageOutputAnalisy(){
     });
     
     if (answare.value == gameNum.result){
-        if (playerRound){
-            for (let i = 0; i < gunWeapon.attackAmount; i++){
-                player2.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
-                damageOutputVisual(playerRound);
-            }
-            player2Health.value = player2.health;
-            playerRound = !playerRound;
-            newRoundStyle(playerRound);
-            gameNum.beRandom();
-            randomMath(gameNum.x, gameNum.y);
-        } else {
-            for (let i = 0; i < gunWeapon.attackAmount; i++){
-                player1.damageOutput(gunWeapon.damage, gunWeapon.kritzProb);
-                damageOutputVisual(playerRound);
-            }
-            player1Health.value = player1.health;
-            playerRound = !playerRound;
-            newRoundStyle(playerRound);
-            gameNum.beRandom();
-            randomMath(gameNum.x, gameNum.y);
-        } 
+        (playerRound) ? damageEntry(gunWeapon.attackAmount, player2, gunWeapon.damage, gunWeapon.kritzProb,  player2Health) : damageEntry(gunWeapon.attackAmount, player1, gunWeapon.damage, gunWeapon.kritzProb, player1Health);
     } else {
         selfInflictDamage(playerRound);
         playerRound = !playerRound

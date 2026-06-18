@@ -7,7 +7,6 @@ const answare = document.getElementById('answare');
 export function checkAnsware() {
     confirmBtn.addEventListener('click', () => {
         damageOutputAnalisy();
-                
         answare.value = null;
     })
 }

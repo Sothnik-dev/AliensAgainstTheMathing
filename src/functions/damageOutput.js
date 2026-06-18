@@ -1,4 +1,5 @@
 import { victoryCase } from "./winDefeatCondition.js";
+import { fastSelection } from "./fastSelection.js";
 
 const player1Skin = document.getElementsByClassName('player')[0]; 
 const player2Skin = document.getElementsByClassName('player')[1];
@@ -19,44 +20,24 @@ let playerVictorious = sessionStorage.getItem('playerVictorious');
 let p1PlayerRewind = player1SkinValue;
 let p2PlayerRewind = player2SkinValue;
 
+const timeSpam = (healthValue, skinValue, skinRewind, time) => {
+    setTimeout(() => {
+        if (healthValue.value > 0) {
+            skinValue.src = skinRewind;
+        }
+    }, time)
+} 
+
 export function damageOutputVisual(round) {
     if (round) {
         if (player2Health.value > 0){
-            switch(player2NameValue) {
-                case 'Blormall': 
-                    player2Skin.src = `./imgs/aliensSkins/aliensnshitestHurtv1.png`
-                    break;
-                case 'Cröwboy':
-                    player2Skin.src = `./imgs/aliensSkins/aliensnshitestHurtv2.png`
-                    break;
-                case 'Bread Burst':
-                    player2Skin.src = `./imgs/aliensSkins/aliensnshitestHurtv3.png`
-                    break;
-            }
-            setTimeout(() => {
-                if (player2Health.value > 0) {
-                    player2Skin.src = p2PlayerRewind;
-                } 
-            }, 750)
+            fastSelection(player2NameValue, player2Skin);
+            timeSpam(player2Health, player2Skin, p2PlayerRewind, 750);
         }
     } else {
         if (player1Health.value > 0) {
-            switch(player1NameValue) {
-                case 'Blormall': 
-                    player1Skin.src = `./imgs/aliensSkins/aliensnshitestHurtv1.png`
-                    break;
-                case 'Cröwboy':
-                    player1Skin.src = `./imgs/aliensSkins/aliensnshitestHurtv2.png`
-                    break;
-                case 'Bread Burst':
-                    player1Skin.src = `./imgs/aliensSkins/aliensnshitestHurtv3.png`
-                    break;
-            }
-            setTimeout(() => {
-                if (player1Health.value > 0) {
-                    player1Skin.src = p1PlayerRewind;
-                }
-            }, 750)
+            fastSelection(player1NameValue, player1Skin);
+            timeSpam(player1Health, player1Skin, p1PlayerRewind, 750);
         }
     }
 }

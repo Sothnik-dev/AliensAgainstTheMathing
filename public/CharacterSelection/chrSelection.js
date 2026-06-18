@@ -1,5 +1,6 @@
 import { musicPlayer } from "../../src/functions/musicPlayer.js";
 import { checkMusicValue } from "../../src/functions/checkMusicValue.js";
+import { fastMainChrSelection } from "../../src/functions/fastSelection.js";
 
 // Valores de seleção p1 e p2
 let selection1Value = 1;
@@ -30,39 +31,13 @@ musicPlayer(chrSelectionMusic);
 checkMusicValue(soundIcon, chrSelectionMusic, canPlay);
 
 //Switches que definem o valor da src
+//Resolver bug aqui
 function playerSelection(x){
     if(x = 1){
-        switch (selection1Value){
-            case 1:
-                player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
-                break;
-            case 2:
-                player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv2.png`;
-                break;
-            case 3:
-                player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv3.png`;
-                break
-            default:
-                player1Skin.innerHTML = 'algo deu terrivelmente errado'
-                break;   
-        }
+        fastMainChrSelection(selection1Value, player1Skin);
     }
-
     if (x = 2){
-        switch (selection2Value){
-            case 1:
-                player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
-                break;
-            case 2:
-                player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv2.png`;
-                break;
-            case 3:
-                player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv3.png`;
-                break
-            default:
-                player2Skin.innerHTML = 'algo deu terrivelmente errado'
-                break;   
-        }
+        fastMainChrSelection(selection2Value, player2Skin);
     }
 }
 

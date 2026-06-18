@@ -2,10 +2,7 @@ let dificultyValue = sessionStorage.getItem('diffValue');
 
 export function checkDificultyDamage() {
     switch(dificultyValue) {
-        case 'Easy':
-            return 1;
-            break;
-        case 'Medium':
+        case 'Easy': case 'Medium':
             return 1;
             break;
         case 'Hard':
