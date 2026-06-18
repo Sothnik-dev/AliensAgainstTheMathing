@@ -17,4 +17,3 @@ export function checkMusicValue(domValueBtn, domValue, canPlay) {
     }
 })
 }
-

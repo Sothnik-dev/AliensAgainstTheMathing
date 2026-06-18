@@ -29,7 +29,6 @@ export function generateTime() {
             }
         }
     }, 1000)
-    
 }
 
 confirmBtn.addEventListener('click', () => {
