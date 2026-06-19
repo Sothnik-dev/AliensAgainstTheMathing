@@ -1,6 +1,7 @@
 import { musicPlayer } from "../../src/functions/musicPlayer.js";
 import { checkMusicValue } from "../../src/functions/checkMusicValue.js";
 import { fastMainChrSelection } from "../../src/functions/fastSelection.js";
+import { updateVolume } from "../../src/functions/volumeFunction.js";
 
 // Valores de seleção p1 e p2
 let selection1Value = 1;
@@ -26,9 +27,11 @@ const chrSelectionMusic = document.getElementById('chrSelectionMusic');
 const soundIcon = document.getElementById('soundIcon');
 
 let canPlay = true;
+let musicVolume = sessionStorage.getItem("volumeValue");
 
 musicPlayer(chrSelectionMusic);
 checkMusicValue(soundIcon, chrSelectionMusic, canPlay);
+updateVolume(chrSelectionMusic, musicVolume);
 
 //Switches que definem o valor da src
 //Resolver bug aqui

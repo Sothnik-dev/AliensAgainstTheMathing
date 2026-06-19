@@ -3,6 +3,7 @@ import { checkAnsware } from "./functions/checkAnsware.js";
 
 import { musicPlayer } from "./functions/musicPlayer.js";
 import { checkMusicValue } from "./functions/checkMusicValue.js";
+import { updateVolume } from "./functions/volumeFunction.js";
 
 // Conteiners capturado por DOM
 const mainPanel = document.getElementById('mainPanel');
@@ -30,9 +31,11 @@ const mainGameAudio = document.getElementById('mainGameAudio');
 const soundIcon = document.getElementById('soundIcon');
 
 let canPlay = true;
+let musicVolume = sessionStorage.getItem("volumeValue");
 
 musicPlayer(mainGameAudio);
 checkMusicValue(soundIcon, mainGameAudio, canPlay);
+updateVolume(mainGameAudio, musicVolume);
 
 // "Inicia o jogo"
 startBtn.addEventListener('click', () => {

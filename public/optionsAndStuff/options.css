@@ -35,16 +35,46 @@ select{
 }
 
 .displayCenter {
-    padding: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btnPattern {
+    height: 95px;
+    width: 365px;
 }
 
 #optBtn {
     padding: 1rem;
     background-color: #df7126;
     border: solid black 2px;
+}
+
+#rangeVolume {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+#rangeVolume::-webkit-slider-runnable-track {
+  height: 8px;
+  background: #df7126;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+#rangeVolume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  background: #df7126;
+  border-radius: 30px;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  margin-top: -9px;
 }
 
 @media only screen and (max-width: 600px) {

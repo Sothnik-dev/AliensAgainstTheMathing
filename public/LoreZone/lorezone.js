@@ -1,5 +1,6 @@
 import { musicPlayer } from "../../src/functions/musicPlayer.js";
 import { checkMusicValue } from "../../src/functions/checkMusicValue.js";
+import { updateVolume } from "../../src/functions/volumeFunction.js";
 
 const lb1 = document.getElementsByClassName('loreBlock')[0];
 const lb2 = document.getElementsByClassName('loreBlock')[1];
@@ -16,9 +17,11 @@ const loreZoneBackgroundMusic = document.getElementById('loreZoneBackgroundMusic
 const soundIcon = document.getElementById('soundIcon');
 
 let canPlay = true;
+let musicVolume = sessionStorage.getItem("volumeValue");
 
 musicPlayer(loreZoneBackgroundMusic);
 checkMusicValue(soundIcon, loreZoneBackgroundMusic, canPlay);
+updateVolume(loreZoneBackgroundMusic, musicVolume);
 
 if (pageValue < -1){
     pageValue = 0;
@@ -32,7 +35,6 @@ backwardsBtn.addEventListener('click', () => {
     } else {
         pageValue--;
     }
-    console.log(pageValue);
     getValueInfo();
 })
 
@@ -42,7 +44,6 @@ fowardBtn.addEventListener('click', () => {
     } else {
         pageValue++;
     }
-    console.log(pageValue);
     getValueInfo();
 })
 

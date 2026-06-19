@@ -1,7 +1,11 @@
 import { musicPlayer } from "../../src/functions/musicPlayer.js";
 import { checkMusicValue } from "../../src/functions/checkMusicValue.js";
+import { updateVolume, updateVolumeOpt } from "../../src/functions/volumeFunction.js";
+
+const dificultyImg = document.getElementById('dificultyImg');
 
 const diffValue = document.getElementById('dificultyValue');
+const volumeValue = document.getElementById('rangeVolume');
 const gayValue = document.getElementById('gayValue');
 
 //Área de musica
@@ -12,6 +16,29 @@ let canPlay = true;
 
 musicPlayer(optBackgroundMusic)
 checkMusicValue(audioIcon, optBackgroundMusic, canPlay)
+updateVolumeOpt(optBackgroundMusic, volumeValue);
+
+diffValue.addEventListener('click', () => {
+    switch (diffValue.value) {
+    case 'Easy':
+        dificultyImg.src = `/public/imgs/deco/btnEasy.png`
+        break;
+    case 'Medium':
+        dificultyImg.src = `/public/imgs/deco/btnMedium.png`
+        break;
+    case 'Hard':
+        dificultyImg.src = `/public/imgs/deco/btnHard.png`
+        break;
+    case 'Hell on earth':
+        dificultyImg.src = `/public/imgs/deco/btnHOE.png`
+        break;
+    default:
+        dificultyImg.src = `/public/imgs/deco/btnMedium.png`
+        break;
+}
+})
+
+
 
 const goToMain = document.getElementById('optBtn').addEventListener('click', () => {
     sessionStorage.setItem('diffValue', diffValue.value);
@@ -19,3 +46,4 @@ const goToMain = document.getElementById('optBtn').addEventListener('click', () 
     
     window.location.href = `/public/mainMenu/menu.html`
 })
+
