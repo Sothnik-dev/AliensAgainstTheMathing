@@ -1,6 +1,6 @@
-import { musicPlayer } from "../../src/functions/musicPlayer.js";
-import { checkMusicValue } from "../../src/functions/checkMusicValue.js";
-import { updateVolume } from "../../src/functions/volumeFunction.js";
+import { checkMusicValue } from "../../src/functions/musicFunction/checkMusicValue.js";
+import { musicPlayer } from "../../src/functions/musicFunction/musicPlayer.js";
+import { updateVolume } from "../../src/functions/musicFunction/volumeFunction.js";
 
 const lb1 = document.getElementsByClassName('loreBlock')[0];
 const lb2 = document.getElementsByClassName('loreBlock')[1];

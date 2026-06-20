@@ -1,4 +1,4 @@
-import { fastDeathSelection, fastWinnerSelection } from "./fastSelection.js";
+import { fastDeathSelection, fastWinnerSelection } from "../selectionFunction/fastSelection.js";
 
 //Define quem venceu, segue a mesma lógica
 let playerVictorious = null;

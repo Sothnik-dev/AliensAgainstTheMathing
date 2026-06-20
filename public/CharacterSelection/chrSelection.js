@@ -1,7 +1,8 @@
-import { musicPlayer } from "../../src/functions/musicPlayer.js";
-import { checkMusicValue } from "../../src/functions/checkMusicValue.js";
-import { fastMainChrSelection } from "../../src/functions/fastSelection.js";
-import { updateVolume } from "../../src/functions/volumeFunction.js";
+import { checkMusicValue } from "../../src/functions/musicFunction/checkMusicValue.js";
+import { musicPlayer } from "../../src/functions/musicFunction/musicPlayer.js";
+import { updateVolume } from "../../src/functions/musicFunction/volumeFunction.js";
+
+import { fastMainChrSelection } from "../../src/functions/selectionFunction/fastSelection.js";
 
 // Valores de seleção p1 e p2
 let selection1Value = 1;

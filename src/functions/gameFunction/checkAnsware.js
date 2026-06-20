@@ -1,4 +1,4 @@
-import { damageOutputAnalisy } from "./generateDamage.js";
+import { damageOutputAnalisy } from "../damageFunction/generateDamage.js";
 
 //captura o valor da equação via DOM
 const answare = document.getElementById('answare');

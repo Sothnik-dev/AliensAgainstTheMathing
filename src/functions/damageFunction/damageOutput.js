@@ -1,5 +1,5 @@
-import { victoryCase } from "./winDefeatCondition.js";
-import { fastSelection } from "./fastSelection.js";
+import { victoryCase } from "../gameFunction/winDefeatCondition.js";
+import { fastSelection } from "../selectionFunction/fastSelection.js";
 
 const player1Skin = document.getElementsByClassName('player')[0]; 
 const player2Skin = document.getElementsByClassName('player')[1];

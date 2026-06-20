@@ -1,4 +1,4 @@
-import { checkDificultyDamage } from "./damageDiffValue.js";
+import { checkDificultyDamage } from "../damageFunction/damageDiffValue.js";
 
 export class NewNumber {
     constructor(x, y, result){

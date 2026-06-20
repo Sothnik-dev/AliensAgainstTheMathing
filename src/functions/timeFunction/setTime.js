@@ -1,4 +1,4 @@
-import { selfInflictDamage } from "./generateDamage.js";
+import { selfInflictDamage } from "../damageFunction/generateDamage.js";
 import { checkDificulty } from "./setTimeDiffValue.js";
 
 //Capturas DOM

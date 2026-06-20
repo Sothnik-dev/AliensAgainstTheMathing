@@ -1,9 +1,9 @@
-import { startGame } from "./functions/gameLogic.js";
-import { checkAnsware } from "./functions/checkAnsware.js";
+import { startGame } from "./functions/gameFunction/gameLogic.js";
+import { checkAnsware } from "./functions/gameFunction/checkAnsware.js";
 
-import { musicPlayer } from "./functions/musicPlayer.js";
-import { checkMusicValue } from "./functions/checkMusicValue.js";
-import { updateVolume } from "./functions/volumeFunction.js";
+import { checkMusicValue } from "../../src/functions/musicFunction/checkMusicValue.js";
+import { musicPlayer } from "../../src/functions/musicFunction/musicPlayer.js";
+import { updateVolume } from "../../src/functions/musicFunction/volumeFunction.js";
 
 // Conteiners capturado por DOM
 const mainPanel = document.getElementById('mainPanel');

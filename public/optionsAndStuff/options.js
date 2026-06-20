@@ -1,6 +1,6 @@
-import { musicPlayer } from "../../src/functions/musicPlayer.js";
-import { checkMusicValue } from "../../src/functions/checkMusicValue.js";
-import { updateVolume, updateVolumeOpt } from "../../src/functions/volumeFunction.js";
+import { checkMusicValue } from "../../src/functions/musicFunction/checkMusicValue.js";
+import { musicPlayer } from "../../src/functions/musicFunction/musicPlayer.js";
+import { updateVolume, updateVolumeOpt } from "../../src/functions/musicFunction/volumeFunction.js";
 
 const dificultyImg = document.getElementById('dificultyImg');
 

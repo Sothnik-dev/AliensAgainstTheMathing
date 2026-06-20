@@ -1,16 +1,16 @@
 //Imports
-import { Person } from "../components/player.js";
-import { Weapon } from "../components/weapon.js";
+import { Person } from "../../components/player.js";
+import { Weapon } from "../../components/weapon.js";
 
-import { NewNumber } from "./newNumber.js";
-import { randomMath } from "./randomMath.js";
+import { NewNumber } from "../mathFunction/newNumber.js";
+import { randomMath } from "../mathFunction/randomMath.js";
 
-import { deathDefinition } from "./winDefeatCondition.js";
-import { victoryCase } from "./winDefeatCondition.js";
+import { deathDefinition } from "../gameFunction/winDefeatCondition.js";
+import { victoryCase } from "../gameFunction/winDefeatCondition.js";
 
-import { newRoundStyle } from "./playerAura.js";
+import { newRoundStyle } from "../miscFunction/playerAura.js";
 import { damageOutputVisual } from "./damageOutput.js";
-import { checkDificultyDamage } from "./damageDiffValue.js";
+import { checkDificultyDamage } from "./damageDiffValue.js"
 
 //Define de quem é a vez, true = p1 e false = p2
 export let playerRound = true;
