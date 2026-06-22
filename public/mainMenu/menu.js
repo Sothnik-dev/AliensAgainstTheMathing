@@ -12,13 +12,21 @@ if (gayValue == ''){
     gayValue = 'Nah'
 }
 
+console.log(window.innerWidth)
+console.log(window.innerHeight)
+
+
 if (gayValue == 'Yeah') {
-    document.body.style.backgroundImage = `url('/public/imgs/aliensBg/bgToAliensMenuPride.png')`
+    if (window.innerHeight < 600 || window.innerWidth < 600) {
+        document.body.style.backgroundImage = `url('/public/imgs/aliensBgCell/bgCellToAliensPride.png')`
+
+    } else {
+        document.body.style.backgroundImage = `url('/public/imgs/aliensBg/bgToAliensMenuPride.png')`
+    }
 }
 
 let canPlay = true;
 let musicVolume = sessionStorage.getItem("volumeValue");
-console.log(musicVolume)
 
 musicPlayer(menuMusic);
 checkMusicValue(audioIcon, menuMusic, canPlay);

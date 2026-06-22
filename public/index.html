@@ -24,7 +24,7 @@
 </nav>
 <body>
     <div id="gameContainer">
-        <div class="spaceAroundContainer" style="padding: 20px;">
+        <div class="spaceAroundContainer">
             <div>
                 <p>Life</p>
                 <progress id="player1Health" max="100" value="100"></progress>
@@ -32,7 +32,7 @@
             </div>
             <div>
                 <div id="nowTimeStyle">
-                    <p id="nowTime" style="color: white; height: 35px;">Ready?</p>
+                    <p id="nowTime">Ready?</p>
                 </div>
             </div>
             <div>
@@ -43,31 +43,35 @@
                 <p id="player2NameDOM" class="flexEndP">playerName</p>
             </div>
         </div>
-    <main class="spaceAroundContainer" style="padding: 4rem;">
-        <div>
-            <img  class="player" src="" alt="">
-        </div>
-            <div id="endingContainer">
-                <div id="mathArea">
-                    <div class="spaceAroundContainer" style="height: 150px; color: white;">
-                        <p id="val1">x</p>
-                        <p style="color: white;">X</p>
-                        <p id="val2">x</p>
-                    </div>
-                    <div class="flexCenter">
-                        <input class="inputStyle" style=" width: 40px; margin-right: 10px;" type="text" name="" id="answare">
-                        <input class="inputStyle" type="submit" value="Kill it" id="confirmBtn">
+    <div>
+        <main class="spaceAroundContainer">
+            <div>
+                <img  class="player" src="" alt="">
+            </div>
+                <div id="endingContainer">
+                    <div id="mathArea">
+                        <div class="spaceAroundContainer">
+                            <p id="val1">x</p>
+                            <p id="midVal">X</p>
+                            <p id="val2">x</p>
+                        </div>
+                        <div class="flexCenter">
+                            <input class="inputStyleLabel" style="height: 25px; width: 40px; margin-right: 10px;" type="text" name="" id="answare">
+                            <input class="inputStyleBtn" type="submit" value="Kill" id="confirmBtn">
+                        </div>
                     </div>
                 </div>
+                <div>
+                    <img style="transform: scaleX(-1);" class="player" src="" alt="">
+                </div>
             </div>
-            <div>
-                <img style="transform: scaleX(-1);" class="player" src="" alt="">
+        </main>
+    </div>
+    <div>
+        <div id="winMessage">
+            <div style="display: flex; justify-content: center; align-items: center; width: 97.5%; padding: 1rem;">
+                <img style="height: 100px;" id="victoryText" src="" alt="">
             </div>
-        </div>
-    </main>
-    <div id="winMessage">
-        <div style="display: flex; justify-content: center; align-items: center; width: 97.5%; padding: 1rem;">
-            <img style="height: 100px;" id="victoryText" src="" alt="">
         </div>
     </div>
 </body>

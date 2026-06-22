@@ -7,6 +7,7 @@ import { updateVolume } from "../../src/functions/musicFunction/volumeFunction.j
 
 // Conteiners capturado por DOM
 const mainPanel = document.getElementById('mainPanel');
+const audioContainer = document.getElementsByClassName('flexEnd')[0];
 const gameContainer = document.getElementById('gameContainer');
 const startBtnContainer = document.getElementById('startBtnContainer');
 
@@ -19,6 +20,7 @@ let gameStarted = false;
 
 //Define o estado do gameContainer
 gameContainer.style.visibility = (gameStarted) ? 'visible' : 'hidden';
+audioContainer.style.visibility = (gameStarted) ? 'visible' : 'hidden';
 
 //Captura o valor da vida dos personagens
 let player1Health = sessionStorage.getItem('player1HealthValue');
@@ -41,7 +43,8 @@ updateVolume(mainGameAudio, musicVolume);
 startBtn.addEventListener('click', () => {
     gameStarted = true;
     gameContainer.style.visibility = 'visible'
-    startBtnContainer.style.visibility = 'hidden'
+    audioContainer.style.visibility = 'visible'
+    startBtnContainer.remove();
 
     player1Skin.style.filter = `drop-shadow(0px 0px 15px green)`
 

@@ -36,3 +36,23 @@ p {
     align-items: end;
     padding: 1rem;
 }
+
+@media only screen and (max-width: 568px) {
+    body {
+        background-image: url(/public/imgs/aliensBgCell/bgCellToAliensThanks.png);
+    }
+}
+
+@media only screen and (max-height: 568px) {
+    body {
+        background-image: url(/public/imgs/aliensBgCell/bgCellToAliensThanks2.png);
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    #textDiv {
+        margin-top: 2rem;
+    }
+}

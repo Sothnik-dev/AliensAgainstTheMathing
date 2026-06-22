@@ -10,6 +10,7 @@ p {
 body {
     background-image: url(/public/imgs/aliensBg/bgToAliensMenu.png);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .spaceBetweenContainer {
@@ -49,14 +50,33 @@ body {
 }
 
 .btnPattern {
-    height: 100px;
-    width: 400px;
+    height: 80px;
+    width: 340px;
+}
+
+@media only screen and (max-height: 568px) {
+    body {
+        background-image: url(/public/imgs/aliensBgCell/bgCellToAliens.png);
+        background-size: cover;
+    }
+
+    #audioIcon {
+        height: 35px;
+        width: 35px;
+}
+    .titlePattern {
+        margin-bottom: 5rem;
+}
+
+    .btnPattern {
+        height: 95px;
+        width: 365px;
+    }
 }
 
 @media only screen and (max-width: 568px) {
     body {
-        background-image: url(/public/imgs/aliensBg/bgToAliensMenu.png);
-        background-size: contain;
+        background-image: url(/public/imgs/aliensBgCell/bgCellToAliens.png);
     }
 
     #audioIcon {
@@ -64,20 +84,15 @@ body {
         width: 35px;
 }
 
-    .flexCenter {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-}
-
     .titlePattern {
-        height: 75px; 
-        width: 400px;
+        height: 65px; 
+        width: 355px;
 
-        padding-bottom: 3rem;
+        margin-bottom: 4rem;
 }
+
     .btnPattern {
-        height: 95px;
-        width: 365px;
+        height: px;
+        width: 325px;
     }
 }
