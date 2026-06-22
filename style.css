@@ -8,7 +8,7 @@ p {
 }
 
 body {
-    background-image: url(/public/imgs/aliensBg/bgToAliensMenu.png);
+    background-image: url(./public/imgs/aliensBg/bgToAliensMenu.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -56,7 +56,7 @@ body {
 
 @media only screen and (max-height: 568px) {
     body {
-        background-image: url(/public/imgs/aliensBgCell/bgCellToAliens.png);
+        background-image: url(./public/imgs/aliensBgCell/bgCellToAliens.png);
         background-size: cover;
     }
 
@@ -76,7 +76,7 @@ body {
 
 @media only screen and (max-width: 568px) {
     body {
-        background-image: url(/public/imgs/aliensBgCell/bgCellToAliens.png);
+        background-image: url(./public/imgs/aliensBgCell/bgCellToAliens.png);
     }
 
     #audioIcon {
