@@ -21,19 +21,19 @@ updateVolumeOpt(optBackgroundMusic, volumeValue);
 diffValue.addEventListener('click', () => {
     switch (diffValue.value) {
     case 'Easy':
-        dificultyImg.src = `./public/imgs/deco/btnEasy.png`
+        dificultyImg.src = `/public/imgs/deco/btnEasy.png`
         break;
     case 'Medium':
-        dificultyImg.src = `./public/imgs/deco/btnMedium.png`
+        dificultyImg.src = `/public/imgs/deco/btnMedium.png`
         break;
     case 'Hard':
-        dificultyImg.src = `./public/imgs/deco/btnHard.png`
+        dificultyImg.src = `/public/imgs/deco/btnHard.png`
         break;
     case 'Hell on earth':
-        dificultyImg.src = `./public/imgs/deco/btnHOE.png`
+        dificultyImg.src = `/public/imgs/deco/btnHOE.png`
         break;
     default:
-        dificultyImg.src = `./public/imgs/deco/btnMedium.png`
+        dificultyImg.src = `/public/imgs/deco/btnMedium.png`
         break;
 }
 })
