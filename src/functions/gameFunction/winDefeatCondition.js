@@ -57,16 +57,16 @@ export function victoryCase() {
     if (playerVictorious == true) {
         fastWinnerSelection(player1NameValue, player1Skin);
         winTemplate();
-        victoryText.src = `/public/imgs/deco/winStatep1.png`
+        victoryText.src = `../../public/imgs/deco/winStatep1.png`
     } else if (playerVictorious == false) {
         fastWinnerSelection(player2NameValue, player2Skin);
         winTemplate();
-        victoryText.src = `/public/imgs/deco/winStatep2.png` 
+        victoryText.src = `../../public/imgs/deco/winStatep2.png` 
     }
 
     victoryText.addEventListener('click', () => {
         playerVictorious = null
         sessionStorage.setItem('playerVictorious', playerVictorious)
-        window.location.href = `/public/CharacterSelection/chrSelection.html`;
+        window.location.href = `../../public/CharacterSelection/chrSelection.html`;
     }) 
 }

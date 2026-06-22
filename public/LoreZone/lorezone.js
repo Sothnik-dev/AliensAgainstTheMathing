@@ -50,18 +50,18 @@ fowardBtn.addEventListener('click', () => {
 function getValueInfo() {
     switch (pageValue) {
         case 0:
-            lb1.src = `/public/imgs/loreImgs/loreBlock1Val1.png`
-            lb2.src = `/public/imgs/loreImgs/loreBlock2Val1.png`
-            lb3.src = `/public/imgs/loreImgs/loreBlock3Val1.png`
-            lb4.src = `/public/imgs/loreImgs/loreBlock4Val1.png`
+            lb1.src = `../../public/imgs/loreImgs/loreBlock1Val1.png`
+            lb2.src = `../../public/imgs/loreImgs/loreBlock2Val1.png`
+            lb3.src = `../../public/imgs/loreImgs/loreBlock3Val1.png`
+            lb4.src = `../../public/imgs/loreImgs/loreBlock4Val1.png`
             break;
         case 1:
-            lb1.src = `/public/imgs/loreImgs/loreBlock1Val2.png`
-            lb2.src = `/public/imgs/loreImgs/loreBlock2Val2.png`
-            lb3.src = `/public/imgs/loreImgs/loreBlock3Val2.png`
-            lb4.src = `/public/imgs/loreImgs/loreBlock4Val2.png`
+            lb1.src = `../../public/imgs/loreImgs/loreBlock1Val2.png`
+            lb2.src = `../../public/imgs/loreImgs/loreBlock2Val2.png`
+            lb3.src = `../../public/imgs/loreImgs/loreBlock3Val2.png`
+            lb4.src = `../../public/imgs/loreImgs/loreBlock4Val2.png`
             break;
         case 2: 
-            window.location.href = '/public/CharacterSelection/chrSelection.html'
+            window.location.href = '../../public/CharacterSelection/chrSelection.html'
     }
 }
