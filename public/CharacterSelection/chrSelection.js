@@ -20,8 +20,8 @@ const valueBtn4 = document.getElementsByClassName('changeBtn')[3];
 const startBtn = document.getElementById('startBtn');
 
 //valor inicial da skin base
-player1Skin.src = `/./public/imgs/aliensSkins/aliensnshiv1.png`;
-player2Skin.src = `/./public/imgs/aliensSkins/aliensnshiv1.png`;
+player1Skin.src = `../../public/imgs/aliensSkins/aliensnshiv1.png`;
+player2Skin.src = `../../public/imgs/aliensSkins/aliensnshiv1.png`;
 
 //Área para o audio
 const chrSelectionMusic = document.getElementById('chrSelectionMusic');
@@ -133,5 +133,5 @@ startBtn.addEventListener('click', () => {
             sessionStorage.setItem('player2SkinValue', `/./public/imgs/aliensSkins/aliensnshiv3.png`)
     }
 
-    window.location.href = '/./public/gameArea/game.html'
+    window.location.href = '../../public/gameArea/game.html'
 }) 
