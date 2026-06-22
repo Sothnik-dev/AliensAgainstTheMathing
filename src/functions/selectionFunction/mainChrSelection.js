@@ -13,8 +13,8 @@ const player1Skin = document.getElementsByClassName('player')[0];
 const player2Skin = document.getElementsByClassName('player')[1];
 
 //Padronização de skin
-player1Skin.src = `./public/imgs/aliensSkins/aliensnshiv1.png`
-player2Skin.src = `./public/imgs/aliensSkins/aliensnshiv1.png`
+player1Skin.src = `././public/imgs/aliensSkins/aliensnshiv1.png`
+player2Skin.src = `././public/imgs/aliensSkins/aliensnshiv1.png`
 
 //A partir de switches, define a skin do player
 export function mainCharacterSelection() {
