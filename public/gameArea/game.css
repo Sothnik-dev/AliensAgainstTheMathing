@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'pixels';
-    src: url(/public/fonts/Minecraftia-Regular.ttf);
+    src: url(./public/fonts/Minecraftia-Regular.ttf);
 }
 
 *{
@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url(/public/imgs/aliensBg/bgToAliens.png);
+    background-image: url(./public/imgs/aliensBg/bgToAliens.png);
     background-size: cover;
 }
 
@@ -132,7 +132,7 @@ progress{
 
 @media only screen and (max-height: 568px) {
     body {
-        background-image: url(/public/imgs/aliensBgCell/bgCellToAliensSpaceMoon2.png);
+        background-image: url(./public/imgs/aliensBgCell/bgCellToAliensSpaceMoon2.png);
         background-size: cover;
     }
 
@@ -176,7 +176,7 @@ progress{
 
 @media only screen and (max-width: 568px) {
     body {
-        background-image: url(/public/imgs/aliensBgCell/bgCellToAliensSpaceMoon.png);
+        background-image: url(./public/imgs/aliensBgCell/bgCellToAliensSpaceMoon.png);
     }
 
     p {

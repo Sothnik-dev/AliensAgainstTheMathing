@@ -12,16 +12,12 @@ if (gayValue == ''){
     gayValue = 'Nah'
 }
 
-console.log(window.innerWidth)
-console.log(window.innerHeight)
-
-
 if (gayValue == 'Yeah') {
     if (window.innerHeight < 600 || window.innerWidth < 600) {
-        document.body.style.backgroundImage = `url('/public/imgs/aliensBgCell/bgCellToAliensPride.png')`
+        document.body.style.backgroundImage = `url('./public/imgs/aliensBgCell/bgCellToAliensPride.png')`
 
     } else {
-        document.body.style.backgroundImage = `url('/public/imgs/aliensBg/bgToAliensMenuPride.png')`
+        document.body.style.backgroundImage = `url('./public/imgs/aliensBg/bgToAliensMenuPride.png')`
     }
 }
 
@@ -34,14 +30,14 @@ updateVolume(menuMusic, musicVolume);
 
 //leva o player para a lore page
 const goTo = document.getElementById('startBtn').addEventListener('click', () => {
-    window.location.href = '/public/LoreZone/lorezone.html';
+    window.location.href = './public/LoreZone/lorezone.html';
 })
 
 //leva o player para a página de options
 const goToOpt = document.getElementById('optionsBtn').addEventListener('click', () => {
-    window.location.href = `/public/optionsAndStuff/options.html`;
+    window.location.href = `./public/optionsAndStuff/options.html`;
 })
 
 const creditsBtn = document.getElementById('creditsBtn').addEventListener('click', () => {
-    window.location.href = `/public/CreditsArea/credits.html`
+    window.location.href = `./public/CreditsArea/credits.html`
 })

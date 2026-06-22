@@ -20,8 +20,8 @@ const valueBtn4 = document.getElementsByClassName('changeBtn')[3];
 const startBtn = document.getElementById('startBtn');
 
 //valor inicial da skin base
-player1Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
-player2Skin.src = `/public/imgs/aliensSkins/aliensnshiv1.png`;
+player1Skin.src = `./public/imgs/aliensSkins/aliensnshiv1.png`;
+player2Skin.src = `./public/imgs/aliensSkins/aliensnshiv1.png`;
 
 //Área para o audio
 const chrSelectionMusic = document.getElementById('chrSelectionMusic');
@@ -108,30 +108,30 @@ startBtn.addEventListener('click', () => {
     switch(selection1Value){
         case 1:
             sessionStorage.setItem('player1name', 'Blormall');
-            sessionStorage.setItem('player1SkinValue', `/public/imgs/aliensSkins/aliensnshiv1.png`)
+            sessionStorage.setItem('player1SkinValue', `./public/imgs/aliensSkins/aliensnshiv1.png`)
             break;
         case 2:
             sessionStorage.setItem('player1name', 'Cröwboy');
-            sessionStorage.setItem('player1SkinValue', `/public/imgs/aliensSkins/aliensnshiv2.png`)
+            sessionStorage.setItem('player1SkinValue', `./public/imgs/aliensSkins/aliensnshiv2.png`)
             break;
         case 3:
             sessionStorage.setItem('player1name', 'Bread Burst');
-            sessionStorage.setItem('player1SkinValue', `/public/imgs/aliensSkins/aliensnshiv3.png`)
+            sessionStorage.setItem('player1SkinValue', `./public/imgs/aliensSkins/aliensnshiv3.png`)
     }
 
     switch(selection2Value){
         case 1:
             sessionStorage.setItem('player2name', 'Blormall');
-            sessionStorage.setItem('player2SkinValue', `/public/imgs/aliensSkins/aliensnshiv1.png`)
+            sessionStorage.setItem('player2SkinValue', `./public/imgs/aliensSkins/aliensnshiv1.png`)
             break;
         case 2:
             sessionStorage.setItem('player2name', 'Cröwboy');
-            sessionStorage.setItem('player2SkinValue', `/public/imgs/aliensSkins/aliensnshiv2.png`)
+            sessionStorage.setItem('player2SkinValue', `./public/imgs/aliensSkins/aliensnshiv2.png`)
             break;
         case 3:
             sessionStorage.setItem('player2name', 'Bread Burst');
-            sessionStorage.setItem('player2SkinValue', `/public/imgs/aliensSkins/aliensnshiv3.png`)
+            sessionStorage.setItem('player2SkinValue', `./public/imgs/aliensSkins/aliensnshiv3.png`)
     }
 
-    window.location.href = '/public/gameArea/game.html'
+    window.location.href = './public/gameArea/game.html'
 }) 

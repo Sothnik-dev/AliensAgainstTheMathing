@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'pixels';
-    src: url(/public/fonts/Minecraftia-Regular.ttf);
+    src: url(./public/fonts/Minecraftia-Regular.ttf);
 }
 
 * {
@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url(/public/imgs/aliensBg/bgToAliensEverything.png);
+    background-image: url(./public/imgs/aliensBg/bgToAliensEverything.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
