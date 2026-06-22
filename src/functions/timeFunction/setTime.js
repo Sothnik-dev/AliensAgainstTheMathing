@@ -1,5 +1,7 @@
 import { selfInflictDamage } from "../damageFunction/generateDamage.js";
 import { checkDificulty } from "./setTimeDiffValue.js";
+import { deathDefinition } from "../gameFunction/winDefeatCondition.js";
+import { victoryCase } from "../gameFunction/winDefeatCondition.js";
 
 //Capturas DOM
 const timer = document.getElementById('nowTime');
@@ -26,6 +28,9 @@ export function generateTime() {
             nowTime = checkDificulty();
             if (player1Health.value > 0 && player2Health.value > 0) {
                 selfInflictDamage();
+            } else {
+                deathDefinition();
+                victoryCase();
             }
         }
     }, 1000)

@@ -1,6 +1,6 @@
-import { checkMusicValue } from "./functions/musicFunction/checkMusicValue.js";
-import { musicPlayer } from "./functions/musicFunction/musicPlayer.js";
-import { updateVolume } from "./functions/musicFunction/volumeFunction.js";
+import { checkMusicValue } from "./src/functions/musicFunction/checkMusicValue.js";
+import { musicPlayer } from "./src/functions/musicFunction/musicPlayer.js";
+import { updateVolume } from "./src/functions/musicFunction/volumeFunction.js";
 
 const menuMusic = document.getElementById('mainMenuAudio');
 const audioIcon = document.getElementById('audioIcon');
