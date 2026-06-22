@@ -133,5 +133,5 @@ startBtn.addEventListener('click', () => {
             sessionStorage.setItem('player2SkinValue', `/public/imgs/aliensSkins/aliensnshiv3.png`)
     }
 
-    window.location.href = '/public/index.html'
+    window.location.href = '/public/gameArea/game.html'
 }) 

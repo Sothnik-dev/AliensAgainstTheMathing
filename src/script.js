@@ -1,60 +1,47 @@
-import { startGame } from "./functions/gameFunction/gameLogic.js";
-import { checkAnsware } from "./functions/gameFunction/checkAnsware.js";
+import { checkMusicValue } from "./functions/musicFunction/checkMusicValue.js";
+import { musicPlayer } from "./functions/musicFunction/musicPlayer.js";
+import { updateVolume } from "./functions/musicFunction/volumeFunction.js";
 
-import { checkMusicValue } from "../../src/functions/musicFunction/checkMusicValue.js";
-import { musicPlayer } from "../../src/functions/musicFunction/musicPlayer.js";
-import { updateVolume } from "../../src/functions/musicFunction/volumeFunction.js";
+const menuMusic = document.getElementById('mainMenuAudio');
+const audioIcon = document.getElementById('audioIcon');
 
-// Conteiners capturado por DOM
-const mainPanel = document.getElementById('mainPanel');
-const audioContainer = document.getElementsByClassName('flexEnd')[0];
-const gameContainer = document.getElementById('gameContainer');
-const startBtnContainer = document.getElementById('startBtnContainer');
+//Área de testes
+let gayValue = sessionStorage.getItem('gayValue');
 
-// Botões de começar e confirmar
-const startBtn = document.getElementById('startBtn');
-const confirmBtn = document.getElementById('confirmBtn');
+if (gayValue == ''){
+    gayValue = 'Nah'
+}
 
-// Pra definir se começou ou não o jogo
-let gameStarted = false;
+console.log(window.innerWidth)
+console.log(window.innerHeight)
 
-//Define o estado do gameContainer
-gameContainer.style.visibility = (gameStarted) ? 'visible' : 'hidden';
-audioContainer.style.visibility = (gameStarted) ? 'visible' : 'hidden';
 
-//Captura o valor da vida dos personagens
-let player1Health = sessionStorage.getItem('player1HealthValue');
-let player2Health = sessionStorage.getItem('player2HealthValue');
+if (gayValue == 'Yeah') {
+    if (window.innerHeight < 600 || window.innerWidth < 600) {
+        document.body.style.backgroundImage = `url('/public/imgs/aliensBgCell/bgCellToAliensPride.png')`
 
-const player1Skin = document.getElementsByClassName('player')[0];
-
-//Area do audio
-const mainGameAudio = document.getElementById('mainGameAudio');
-const soundIcon = document.getElementById('soundIcon');
+    } else {
+        document.body.style.backgroundImage = `url('/public/imgs/aliensBg/bgToAliensMenuPride.png')`
+    }
+}
 
 let canPlay = true;
 let musicVolume = sessionStorage.getItem("volumeValue");
 
-musicPlayer(mainGameAudio);
-checkMusicValue(soundIcon, mainGameAudio, canPlay);
-updateVolume(mainGameAudio, musicVolume);
+musicPlayer(menuMusic);
+checkMusicValue(audioIcon, menuMusic, canPlay);
+updateVolume(menuMusic, musicVolume);
 
-// "Inicia o jogo"
-startBtn.addEventListener('click', () => {
-    gameStarted = true;
-    gameContainer.style.visibility = 'visible'
-    audioContainer.style.visibility = 'visible'
-    startBtnContainer.remove();
+//leva o player para a lore page
+const goTo = document.getElementById('startBtn').addEventListener('click', () => {
+    window.location.href = '/public/LoreZone/lorezone.html';
+})
 
-    player1Skin.style.filter = `drop-shadow(0px 0px 15px green)`
+//leva o player para a página de options
+const goToOpt = document.getElementById('optionsBtn').addEventListener('click', () => {
+    window.location.href = `/public/optionsAndStuff/options.html`;
+})
 
-    checkAnsware();
-
-    while (gameStarted) {
-        gameStarted = (player1Health <= 0 || player2Health <= 0) ? false : true;
-
-        if (!gameStarted) {
-            startGame();
-        }
-    }
+const creditsBtn = document.getElementById('creditsBtn').addEventListener('click', () => {
+    window.location.href = `/public/CreditsArea/credits.html`
 })

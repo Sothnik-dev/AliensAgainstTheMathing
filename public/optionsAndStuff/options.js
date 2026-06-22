@@ -44,6 +44,6 @@ const goToMain = document.getElementById('optBtn').addEventListener('click', () 
     sessionStorage.setItem('diffValue', diffValue.value);
     sessionStorage.setItem('gayValue', gayValue.value);
     
-    window.location.href = `/public/mainMenu/menu.html`
+    window.location.href = `/public/index.html`
 })
 

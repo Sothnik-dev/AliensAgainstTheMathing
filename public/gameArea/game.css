@@ -1,0 +1,222 @@
+@font-face {
+    font-family: 'pixels';
+    src: url(/public/fonts/Minecraftia-Regular.ttf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(/public/imgs/aliensBg/bgToAliens.png);
+    background-size: cover;
+}
+
+p {
+    font-family: pixels; 
+    font-size: 1.5rem;
+
+    color: white;   
+}
+
+progress{
+    background-color: rgb(13, 253, 13);
+}
+
+#soundIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.player {
+    width: 200px;
+    height: 350px;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+.flexEnd {
+    display: flex; 
+    justify-content: end;
+    align-items: center;
+
+    margin-right: 10px;
+}
+
+.flexEndP{
+    display: flex;
+    justify-content: end;
+}
+
+.spaceAroundContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.spaceAroundContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-bottom: 2rem;
+}
+
+.spaceBetweenContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputStyleLabel, .inputStyleBtn {
+    font-family: pixels;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #271032;
+    background: linear-gradient(0deg, rgba(39, 16, 50, 1) 0%, rgba(8, 8, 2, 1) 100%);
+    filter: drop-shadow(0px 0px 5px #000000); 
+    border: none;   
+    border-radius: 2px;
+    color: white;
+
+    padding: 8px;
+}
+
+#nowTimeStyle {    
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+
+    background: #271032;
+    background: linear-gradient(0deg, rgba(39, 16, 50, 1) 0%, rgba(8, 8, 2, 1) 100%);
+
+    filter: drop-shadow(0px 0px 5px #000000);    
+    border-radius: 12px;
+
+    height: 75px;
+    width: 75px;
+}
+
+#val1, #val2, #midVal {
+    color: white;
+
+    margin-top: 5rem;
+}
+
+#player1Health, #player2Health {
+    background-color: #cccccc;
+    border-radius: 4px;
+    overflow: hidden;
+
+    transition: width 2s ease 1s;
+}
+
+#mathArea {
+    height: 220px;
+    width: 280px;
+
+    background: #271032;
+    background: linear-gradient(0deg, rgba(39, 16, 50, 1) 0%, rgba(8, 8, 2, 1) 100%);
+
+    filter: drop-shadow(0px 0px 5px #000000);    
+    border-radius: 12px;
+}
+
+@media only screen and (max-height: 568px) {
+    body {
+        background-image: url(/public/imgs/aliensBgCell/bgCellToAliensSpaceMoon2.png);
+        background-size: cover;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    progress{
+        width: 100px;
+    }
+
+    .player {
+        width: 80px;
+        height: 140px;
+    }
+
+    .spaceAroundContainer {
+        justify-content: space-evenly;
+        padding: 0rem;
+    }
+
+    #nowTimeStyle {    
+        height: 30px;
+        width: 40px;
+    }
+
+    #mathArea {
+        height: 80px;
+        width: 100px;
+    }
+
+    #val1, #val2, #midVal {
+        margin-top: 2rem;
+    }
+
+    .inputStyleLabel, .inputStyleBtn {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    body {
+        background-image: url(/public/imgs/aliensBgCell/bgCellToAliensSpaceMoon.png);
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    progress{
+        width: 100px;
+    }
+
+    .player {
+        width: 100px;
+        height: 185px;
+    }
+
+    .spaceAroundContainer {
+        justify-content: space-evenly;
+        padding: 1rem;
+    }
+
+    .flexEnd {
+        margin-bottom: 6rem;
+    }
+
+    .inputStyleLabel, .inputStyleBtn {
+        height: 40px;
+        width: 40px;
+    }
+
+    #nowTimeStyle {    
+        height: 45px;
+        width: 45px;
+    }
+
+    #mathArea {
+        height: 100px;
+        width: 100px;
+    }
+
+    #val1, #val2, #midVal {
+        margin-top: 1rem;
+    }
+}

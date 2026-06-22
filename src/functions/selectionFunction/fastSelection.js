@@ -1,13 +1,13 @@
 export function fastSelection(value, skinValue) {
     switch(value) {
         case 'Blormall': 
-            skinValue.src = `./imgs/aliensSkins/aliensnshitestHurtv1.png`
+            skinValue.src = `/public/imgs/aliensSkins/aliensnshitestHurtv1.png`
             break;
         case 'Cröwboy':
-            skinValue.src = `./imgs/aliensSkins/aliensnshitestHurtv2.png`
+            skinValue.src = `/public/imgs/aliensSkins/aliensnshitestHurtv2.png`
             break;
         case 'Bread Burst':
-            skinValue.src = `./imgs/aliensSkins/aliensnshitestHurtv3.png`
+            skinValue.src = `/public/imgs/aliensSkins/aliensnshitestHurtv3.png`
             break;
     }
 }

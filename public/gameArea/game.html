@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliens against the mathing</title>
+    <link rel="stylesheet" href="./game.css">
+    <link rel="shortcut icon" href="/public/imgs/favicon/faviconAlien.png" type="image/x-icon">
+    <audio id="mainGameAudio">
+        <source src="/public/Audio/OSTs/KillHimRevamped.mp3" type="audio/mpeg">
+    </audio>
+</head>
+<header style="display: flex; justify-content: center;">
+    <div id="startBtnContainer">
+        <div>
+            <img style="height: 100px;" id="startBtn" src="/public/imgs/deco/startAliens.png" alt="" srcset="">
+        </div>
+    </div>
+</header>
+<nav>
+    <div class="flexEnd">
+        <img id="soundIcon" src="/public/imgs/AudioSettings/soundIcon.png" alt="" srcset="">
+    </div>
+</nav>
+<body>
+    <div id="gameContainer">
+        <div class="spaceAroundContainer">
+            <div>
+                <p>Life</p>
+                <progress id="player1Health" max="100" value="100"></progress>
+                <p id="player1NameDOM">playerName</p>
+            </div>
+            <div>
+                <div id="nowTimeStyle">
+                    <p id="nowTime">Ready?</p>
+                </div>
+            </div>
+            <div>
+                <p class="flexEndP">Life</p>
+                <div class="flexEndP">
+                    <progress id="player2Health" max="100" value="100"></progress>
+                </div>
+                <p id="player2NameDOM" class="flexEndP">playerName</p>
+            </div>
+        </div>
+    <div>
+        <main class="spaceAroundContainer">
+            <div>
+                <img  class="player" src="" alt="">
+            </div>
+                <div id="endingContainer">
+                    <div id="mathArea">
+                        <div class="spaceAroundContainer">
+                            <p id="val1">x</p>
+                            <p id="midVal">X</p>
+                            <p id="val2">x</p>
+                        </div>
+                        <div class="flexCenter">
+                            <input class="inputStyleLabel" style="height: 25px; width: 40px; margin-right: 10px;" type="text" name="" id="answare">
+                            <input class="inputStyleBtn" type="submit" value="Kill" id="confirmBtn">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img style="transform: scaleX(-1);" class="player" src="" alt="">
+                </div>
+            </div>
+        </main>
+    </div>
+    <div>
+        <div id="winMessage">
+            <div style="display: flex; justify-content: center; align-items: center; width: 97.5%; padding: 1rem;">
+                <img style="height: 100px;" id="victoryText" src="" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="./game.js"></script>
+</html>
