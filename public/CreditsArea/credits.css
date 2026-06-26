@@ -56,3 +56,9 @@ p {
         margin-top: 2rem;
     }
 }
+
+@media only screen and (min-height: 1024px) {
+    p {
+        font-size: 3rem;
+    }
+}

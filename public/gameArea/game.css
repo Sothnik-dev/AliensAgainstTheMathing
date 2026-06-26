@@ -220,3 +220,48 @@ progress{
         margin-top: 1rem;
     }
 }
+
+@media only screen and (min-height: 1024px) {
+    p {
+        font-size: 3rem;
+    }
+
+    progress{
+        width: 22rem;
+    }
+
+    .player {
+        width: 500px;
+        height: 800px;
+    }
+
+    .inputStyleLabel {
+        padding: 1.8rem;
+    }
+
+    .inputStyleBtn {
+        height: 80px;
+        width: 140px;
+
+        font-size: 2rem;
+    }
+
+    #nowTimeStyle {    
+        height: 145px;
+        width: 145px;
+    }
+
+    #mathArea {
+        height: 300px;
+        width: 400px;
+    }
+
+    #val1, #val2, #midVal {
+        margin-top: 1rem;
+    }
+
+    #victoryText {
+        height: 500px;
+        width: 400px;
+    }
+}

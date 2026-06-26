@@ -109,5 +109,44 @@ select{
     .btnPattern {
         height: 75px;
         width: 300px;
+    }
 }
+
+@media only screen and (min-height: 1024px) {
+
+    #dificultyImg {
+        height: 275px;
+        width: 1000px;
+    }
+
+    #optBtn {
+        font-size: 2rem;
+        height: 150px;
+        width: 500px;    
+    }
+
+    .btnPattern {
+        height: 275px;
+        width: 1000px;
+    }
+
+    select{
+        padding: 2rem;
+        font-size: 2rem;
+    }
+
+    #rangeVolume::-webkit-slider-runnable-track {
+        height: 2rem;
+        border-radius: 10px;
+        border: 1px solid #000000;
+        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    #rangeVolume::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 48px;
+        width: 48px;
+        border-radius: 30px;
+        margin-top: -9px;
+    }
 }

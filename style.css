@@ -92,7 +92,26 @@ body {
 }
 
     .btnPattern {
-        height: px;
+        height: 85px;
         width: 325px;
+    }
+}
+
+@media only screen and (min-height: 1024px) {
+    #audioIcon {
+        height: 100px;
+        width: 100px;
+}
+
+    .titlePattern {
+        height: 300px; 
+        width: 1520px;
+
+        margin-bottom: 4rem;
+}
+
+    .btnPattern {
+        height: 250px;
+        width: 900px;
     }
 }

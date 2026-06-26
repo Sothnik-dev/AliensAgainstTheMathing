@@ -1,4 +1,4 @@
-import { checkMusicValue } from "./src/functions/musicFunction/checkMusicValue.js";
+import { checkMusicValue, checkMenuMusicValue } from "./src/functions/musicFunction/checkMusicValue.js";
 import { musicPlayer } from "./src/functions/musicFunction/musicPlayer.js";
 import { updateVolume } from "./src/functions/musicFunction/volumeFunction.js";
 
@@ -25,7 +25,7 @@ let canPlay = true;
 let musicVolume = sessionStorage.getItem("volumeValue");
 
 musicPlayer(menuMusic);
-checkMusicValue(audioIcon, menuMusic, canPlay);
+checkMenuMusicValue(audioIcon, menuMusic, canPlay);
 updateVolume(menuMusic, musicVolume);
 
 //leva o player para a lore page
