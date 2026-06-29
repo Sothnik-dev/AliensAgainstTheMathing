@@ -57,8 +57,12 @@ p {
     }
 }
 
-@media only screen and (min-height: 1024px) {
+@media only screen and (min-height: 951px) {
+    body {
+        background-image: url(../../public/imgs/aliensBgCell/bgCellToAliensThanks2.png);
+    }
+
     p {
-        font-size: 3rem;
+        font-size: 12px;
     }
 }

@@ -221,39 +221,39 @@ progress{
     }
 }
 
-@media only screen and (min-height: 1024px) {
+@media only screen and (min-height: 951px) {
     p {
-        font-size: 3rem;
-    }
-
-    progress{
-        width: 22rem;
-    }
-
-    .player {
-        width: 500px;
-        height: 800px;
-    }
-
-    .inputStyleLabel {
-        padding: 1.8rem;
-    }
-
-    .inputStyleBtn {
-        height: 80px;
-        width: 140px;
-
         font-size: 2rem;
     }
 
+    progress{
+        width: 10rem;
+    }
+
+    .player {
+        width: 300px;
+        height: 500px;
+    }
+
+    .inputStyleLabel {
+        padding: 1rem;
+    }
+
+    .inputStyleBtn {
+        height: 57px;
+        width: 100px;
+
+        font-size: 1.5rem;
+    }
+
     #nowTimeStyle {    
-        height: 145px;
-        width: 145px;
+        height: 100px;
+        width: 100px;
     }
 
     #mathArea {
-        height: 300px;
-        width: 400px;
+        height: 100px;
+        width: 200px;
     }
 
     #val1, #val2, #midVal {
@@ -262,6 +262,6 @@ progress{
 
     #victoryText {
         height: 500px;
-        width: 400px;
+        width: 350px;
     }
 }

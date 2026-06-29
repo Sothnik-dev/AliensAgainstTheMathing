@@ -97,21 +97,21 @@ body {
     }
 }
 
-@media only screen and (min-height: 1024px) {
+@media only screen and (min-height: 951px) {
     #audioIcon {
-        height: 100px;
-        width: 100px;
+        height: 75px;
+        width: 75px;
 }
 
     .titlePattern {
-        height: 300px; 
-        width: 1520px;
+        height: 200px; 
+        width: 1000px;
 
         margin-bottom: 4rem;
 }
 
     .btnPattern {
-        height: 250px;
-        width: 900px;
+        height: 150px;
+        width: 700px;
     }
 }

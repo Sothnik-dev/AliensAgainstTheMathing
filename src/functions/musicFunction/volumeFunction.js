@@ -10,7 +10,7 @@ export function updateVolumeOpt(domValue, volumeValue) {
 
 export function updateVolume(domValue, volumeValue) {
     if (volumeValue == null) {
-        domValue.volume = 1;
+        domValue.volume = 0.5;
     } else {
         domValue.volume = volumeValue;
     }

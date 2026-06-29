@@ -112,41 +112,27 @@ select{
     }
 }
 
-@media only screen and (min-height: 1024px) {
+@media only screen and (min-height: 951px) {
 
     #dificultyImg {
-        height: 275px;
-        width: 1000px;
+        height: 150px;
+        width: 700px;
     }
 
     #optBtn {
-        font-size: 2rem;
-        height: 150px;
-        width: 500px;    
+        font-size: 1rem;
+        height: 100px;
+        width: 200px;    
     }
 
     .btnPattern {
-        height: 275px;
-        width: 1000px;
+        height: 150px;
+        width: 700px;
     }
 
     select{
-        padding: 2rem;
-        font-size: 2rem;
+        padding: 1rem;
+        font-size: 1rem;
     }
 
-    #rangeVolume::-webkit-slider-runnable-track {
-        height: 2rem;
-        border-radius: 10px;
-        border: 1px solid #000000;
-        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    #rangeVolume::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        height: 48px;
-        width: 48px;
-        border-radius: 30px;
-        margin-top: -9px;
-    }
 }
